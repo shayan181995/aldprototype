@@ -1,29 +1,17 @@
-# README #
+# aldprototype
+ALD Prototype is an approval system based on Nodejs backend and Angular Frontend
 
-This README would normally document whatever steps are necessary to get your application up and running.
+# link
+The website is live at https://aldprototype.ca/
 
-### What is this repository for? ###
+# Example
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+As an example you can enter CCH in active code field and click pull data button which loads relevant details in all 4 forms, you can modify data inside those 4 forms after that accordingly
+![image](https://github.com/shayan181995/aldprototype/assets/25268993/6bfdb1de-831e-4e36-8f89-ae97240b0895)
 
-### How do I get set up? ###
+# Tech Stack
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Nodejs Backend
+Express Js Framework
+Angular Frontend
+Mysql Database
