@@ -1,0 +1,511 @@
+<h3>1. Main</h3>
+<br />
+<br />
+<table *ngIf="valueData">
+  <tr>
+    <th>Anchor Submission Number:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Anchor Submission Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>ALD Report to Generate:</th>
+    <td>{{ valueData['ALD Report to Generate'] }}</td>
+  </tr>
+  <tr>
+    <th>Evaluator:</th>
+    <td>{{ valueData['Evaluator'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Required:</th>
+    <td>{{ valueData['ALD Required'] === 1 ? 'Yes' : 'No' }}</td>
+  </tr>
+  <tr>
+    <th>Program Activity:</th>
+    <td>{{ valueData['Program Activity'] }}</td>
+  </tr>
+  <tr>
+    <th>Active Code:</th>
+    <td>{{ valueData['Active Code'] }}</td>
+  </tr>
+  <tr>
+    <th>Active Name:</th>
+    <td>{{ valueData['Active Name'] }}</td>
+  </tr>
+  <tr>
+    <th>Cluster Name:</th>
+    <td>{{ valueData['Cluster Name'] }}</td>
+  </tr>
+  <tr>
+    <th>Related Submission Numbers:</th>
+    <td>{{ valueData['Related Submission Numbers'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Number:</th>
+    <td>{{ valueData['Submission Number'] }}</td>
+  </tr>
+  <tr>
+    <th>Initiation Date:</th>
+    <td>{{ valueData['Initiation Date'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Number:</th>
+    <td>{{ valueData['ALD Number'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Category:</th>
+    <td>{{ valueData['Submission Category'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Type:</th>
+    <td>{{ valueData['Submission Type'] }}</td>
+  </tr>
+  <tr>
+    <th>Level:</th>
+    <td>{{ valueData['Level'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD created on:</th>
+    <td>{{ valueData['ALD created on'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Last Updated on:</th>
+    <td>{{ valueData['ALD Last Updated on'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Approved By:</th>
+    <td>
+      {{ newApprovalItem.DateofFeedback ? valueData['ALD Approved By'] : '' }}
+    </td>
+  </tr>
+  <tr>
+    <th>ALD Approved On:</th>
+    <td>{{ newApprovalItem.DateofFeedback }}</td>
+  </tr>
+  <tr>
+    <th>Evaluator Sub-Group:</th>
+    <td>{{ valueData['Evaluator sub-Group'] }}</td>
+  </tr>
+  <tr>
+    <th>USCs:</th>
+    <td class="active-code-td">
+      <input type="number" name="level" [(ngModel)]="valueData['USCs']" />
+    </td>
+  </tr>
+  <tr>
+    <th>Purpose of Submission:</th>
+    <td class="active-code-td">
+      <select
+        name="purposeOfSubmission"
+        [(ngModel)]="valueData['Purpose of Submission']"
+        required
+      >
+        <option value="Major New Use">Major New Use</option>
+        <option value="Major Use">Major Use</option>
+        <option value="Minor Use">Minor Use</option>
+        <option value="Re-Evaluation">Re-Evaluation</option>
+        <option value="Special Review">Special Review</option>
+        <option value="Cumulative Risk Assessment">
+          Cumulative Risk Assessment
+        </option>
+        <option value="Notice of Objection-PA2">Notice of Objection-PA2</option>
+        <option value="Notice of Objection-PA1">Notice of Objection-PA1</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Additional Purpose of Submission Comments:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Additional Purpose of Submission Comments']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Scoping Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Scoping Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN1:</th>
+    <td class="active-code-td">
+      <input type="text" name="level" [(ngModel)]="valueData['SMC BN1']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN1 Date:</th>
+    <td class="active-code-td">
+      <input type="date" name="level" [(ngModel)]="valueData['SMC BN1 Date']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN2:</th>
+    <td class="active-code-td">
+      <input type="text" name="level" [(ngModel)]="valueData['SMC BN2']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN2 Date:</th>
+    <td class="active-code-td">
+      <input type="date" name="level" [(ngModel)]="valueData['SMC BN2 Date']" />
+    </td>
+  </tr>
+  <tr>
+    <th>Proposed Decision Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Proposed Decision Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Final Decision Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Final Decision Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Outcome:</th>
+    <td class="active-code-td">
+      <select name="outcome" [(ngModel)]="valueData['Outcome']">
+        <option value="Registered">Registered</option>
+        <option value="Continued Registration">Continued Registration</option>
+        <option value="Voluntary Withdrawal">Voluntary Withdrawal</option>
+        <option value="PMRA Rejected">PMRA Rejected</option>
+        <option value="Panel">Panel</option>
+        <option value="No Panel">No Panel</option>
+        <option value="Other">Other</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Additional Outcome Reasons:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Aditional Outcome Reasons']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Next Assessment Date:</th>
+    <td class="active-code-td">
+      <input
+        type="date"
+        name="level"
+        [(ngModel)]="valueData['Next Assessment Date']"
+      />
+    </td>
+  </tr>
+</table>
+
+<button
+  (click)="updateSectionForm()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Update Record
+</button>
+<span *ngIf="valueData['ALD Required'] === 1">
+  <br />
+  <h3>2. Key Value Considerations</h3>
+  <button
+    (click)="openPopup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add new Section 2
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Reference PMRA Document Numbers Date</th>
+        <th>Reference PMRA Document Numbers</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of valueSection2Data">
+        <td>{{ item.Reference_PMRA_Document_Numbers_Date }}</td>
+        <td>{{ item.Reference_PMRA_Document_Numbers }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openPopup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteItem(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="valueSection2Data.length === 0">
+        <td colspan="5" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showPopup">
+    <form (ngSubmit)="submitForm(editMode)">
+      <h2>{{ editMode ? 'Edit' : 'Add' }} Item</h2>
+      <button class="close-icon" (click)="closePopup()">x</button>
+      <label for="refDocDate">Reference PMRA Document Numbers Date:</label>
+      <input
+        type="date"
+        name="refDocDate"
+        [(ngModel)]="newItem.Reference_PMRA_Document_Numbers_Date"
+        required
+      />
+
+      <label for="refDocNum">Reference PMRA Document Numbers:</label>
+      <input
+        type="text"
+        name="refDocNum"
+        [(ngModel)]="newItem.Reference_PMRA_Document_Numbers"
+        required
+      />
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newItem.Comments"
+        required
+      ></textarea>
+
+      <button type="submit">{{ editMode ? 'Save' : 'Submit' }}</button>
+    </form>
+  </div>
+
+  <h3>3. Future Considerations</h3>
+  <button
+    (click)="openSection3Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add new Section 3
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Study Type</th>
+        <th>Document Type</th>
+        <th>PMRA Number</th>
+        <th>PMRA System Document Location</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of valueSection3Data">
+        <td>{{ item.Study_Type }}</td>
+        <td>{{ item.Document_Type }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.PMRA_System_Document_Location }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openSection3Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteSection3Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="valueSection3Data.length === 0">
+        <td colspan="7" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showSection3Popup">
+    <form (ngSubmit)="submitSection3Form(editModeSection3)">
+      <h2>{{ editModeSection3 ? 'Edit' : 'Add' }} Item</h2>
+      <button class="close-icon" (click)="closeSection3Popup()">x</button>
+      <label for="studyType">Study Type:</label>
+      <input
+        type="text"
+        name="studyType"
+        [(ngModel)]="newSection3Item.Study_Type"
+        required
+      />
+      <label for="docType">Document Type:</label>
+      <input
+        type="text"
+        name="docType"
+        [(ngModel)]="newSection3Item.Document_Type"
+        required
+      />
+
+      <label for="pmraNum">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNum"
+        [(ngModel)]="newSection3Item.PMRA_Number"
+        required
+      />
+      <br />
+      <label for="pmraDocLoc">PMRA System Document Location:</label>
+      <select
+        name="pmraDocLoc"
+        [(ngModel)]="newSection3Item.PMRA_System_Document_Location"
+        required
+      >
+        <option value="DIR">DIR</option>
+        <option value="PMRAP">PMRAP</option>
+        <option value="PMRAO">PMRAO</option>
+        <option value="PMRAI">PMRAI</option>
+      </select>
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newSection3Item.Comments"
+        required
+      ></textarea>
+
+      <button type="submit">{{ editModeSection3 ? 'Save' : 'Submit' }}</button>
+    </form>
+  </div>
+
+  <h3>4. Additional Information</h3>
+  <button
+    (click)="openSection4Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add new Section 4
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Registration Number</th>
+        <th>Reference PMRA Document Numbers</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of valueSection4Data">
+        <td>{{ item.Registration_Number }}</td>
+        <td>{{ item.Reference_PMRA_Document_Numbers }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openSection4Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteSection4Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="valueSection4Data.length === 0">
+        <td colspan="5" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showSection4Popup">
+    <form (ngSubmit)="submitSection4Form(editModeSection4)">
+      <h2>{{ editModeSection4 ? 'Edit' : 'Add' }} Item</h2>
+      <button class="close-icon" (click)="closeSection4Popup()">x</button>
+      <label for="regNum">Registration Number:</label>
+      <input
+        type="number"
+        name="regNum"
+        [(ngModel)]="newSection4Item.Registration_Number"
+        required
+      />
+      <label for="pmraNum">Reference PMRA Document Numbers:</label>
+      <input
+        type="number"
+        name="pmraNum"
+        [(ngModel)]="newSection4Item.Reference_PMRA_Document_Numbers"
+        required
+      />
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newSection4Item.Comments"
+        required
+      ></textarea>
+
+      <button type="submit">{{ editModeSection4 ? 'Save' : 'Submit' }}</button>
+    </form>
+  </div>
+</span>
+<h3>Section Head Feedback</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Comments</th>
+      <th>Feedback</th>
+      <th *ngIf="newApprovalItem.DateofFeedback">Date of Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <textarea
+          rows="4"
+          cols="50"
+          maxlength="1024"
+          [(ngModel)]="newApprovalItem.Comments"
+          [disabled]="shmode !== '1'"
+        ></textarea>
+      </td>
+      <td *ngIf="shmode === '1'">
+        <select
+          [(ngModel)]="newApprovalItem.Feedback"
+          [disabled]="shmode !== '1'"
+        >
+          <option value="Approved">Approved</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </td>
+      <td *ngIf="shmode === '0' || !shmode">
+        {{ newApprovalItem.Feedback }}
+      </td>
+      <td *ngIf="newApprovalItem.DateofFeedback">
+        {{ newApprovalItem.DateofFeedback }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button
+  (click)="requestForApproval()"
+  [ngStyle]="{
+    'background-color':
+      newApprovalItem.Feedback === 'Approved' && shmode !== '1' ? 'green' : ''
+  }"
+  [disabled]="newApprovalItem.Feedback === 'Approved' && shmode !== '1'"
+>
+  {{
+    shmode === '1'
+      ? 'Submit Feedback'
+      : newApprovalItem.Feedback === 'Approved' && shmode !== '1'
+      ? 'Approved'
+      : 'Request Approval'
+  }}
+</button>

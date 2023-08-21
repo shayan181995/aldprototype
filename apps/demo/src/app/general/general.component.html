@@ -1,0 +1,1956 @@
+<h3>1. Main</h3>
+<br />
+<br />
+<table *ngIf="valueData">
+  <tr>
+    <th>Anchor Submission Number:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Anchor Submission Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>ALD Report to Generate:</th>
+    <td>{{ valueData['ALD Report to Generate'] }}</td>
+  </tr>
+  <tr>
+    <th>Evaluator:</th>
+    <td>{{ valueData['Evaluator'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Required:</th>
+    <td>{{ valueData['ALD Required'] === 1 ? 'Yes' : 'No' }}</td>
+  </tr>
+  <tr>
+    <th>Program Activity:</th>
+    <td>{{ valueData['Program Activity'] }}</td>
+  </tr>
+  <tr>
+    <th>Active Code:</th>
+    <td>{{ valueData['Active Code'] }}</td>
+  </tr>
+  <tr>
+    <th>Active Name:</th>
+    <td>{{ valueData['Active Name'] }}</td>
+  </tr>
+  <tr>
+    <th>Cluster Name:</th>
+    <td>{{ valueData['Cluster Name'] }}</td>
+  </tr>
+  <tr>
+    <th>Related Submission Numbers:</th>
+    <td>{{ valueData['Related Submission Numbers'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Number:</th>
+    <td>{{ valueData['Submission Number'] }}</td>
+  </tr>
+  <tr>
+    <th>Initiation Date:</th>
+    <td>{{ valueData['Initiation Date'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Number:</th>
+    <td>{{ valueData['ALD Number'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Category:</th>
+    <td>{{ valueData['Submission Category'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Type:</th>
+    <td>{{ valueData['Submission Type'] }}</td>
+  </tr>
+  <tr>
+    <th>Level:</th>
+    <td>{{ valueData['Level'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD created on:</th>
+    <td>{{ valueData['ALD created on'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Last Updated on:</th>
+    <td>{{ valueData['ALD Last Updated on'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Approved on:</th>
+    <td>{{ newApprovalItem.DateofFeedback }}</td>
+  </tr>
+  <tr>
+    <th>ALD Approved By:</th>
+    <td>
+      {{ newApprovalItem.DateofFeedback ? valueData['ALD Approved By'] : '' }}
+    </td>
+  </tr>
+  <tr>
+    <th>Evaluator Sub-Group:</th>
+    <td>{{ valueData['Evaluator sub-Group'] }}</td>
+  </tr>
+  <tr>
+    <th>USCs:</th>
+    <td class="active-code-td">
+      <input type="number" name="level" [(ngModel)]="valueData['USCs']" />
+    </td>
+  </tr>
+  <tr>
+    <th>Purpose of Submission:</th>
+    <td class="active-code-td">
+      <select
+        name="purposeOfSubmission"
+        [(ngModel)]="valueData['Purpose of Submission']"
+        required
+      >
+        <option value="Major New Use">Major New Use</option>
+        <option value="Major Use">Major Use</option>
+        <option value="Minor Use">Minor Use</option>
+        <option value="Re-Evaluation">Re-Evaluation</option>
+        <option value="Special Review">Special Review</option>
+        <option value="Cumulative Risk Assessment">
+          Cumulative Risk Assessment
+        </option>
+        <option value="Notice of Objection-PA2">Notice of Objection-PA2</option>
+        <option value="Notice of Objection-PA1">Notice of Objection-PA1</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Additional Purpose of Submission Comments:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Additional Purpose of Submission Comments']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Scoping Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Scoping Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN1:</th>
+    <td class="active-code-td">
+      <input type="text" name="level" [(ngModel)]="valueData['SMC BN1']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN1 Date:</th>
+    <td class="active-code-td">
+      <input type="date" name="level" [(ngModel)]="valueData['SMC BN1 Date']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN2:</th>
+    <td class="active-code-td">
+      <input type="text" name="level" [(ngModel)]="valueData['SMC BN2']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN2 Date:</th>
+    <td class="active-code-td">
+      <input type="date" name="level" [(ngModel)]="valueData['SMC BN2 Date']" />
+    </td>
+  </tr>
+  <tr>
+    <th>Proposed Decision Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Proposed Decision Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Final Decision Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Final Decision Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Outcome:</th>
+    <td class="active-code-td">
+      <select name="outcome" [(ngModel)]="valueData['Outcome']">
+        <option value="Registered">Registered</option>
+        <option value="Continued Registration">Continued Registration</option>
+        <option value="Voluntary Withdrawal">Voluntary Withdrawal</option>
+        <option value="PMRA Rejected">PMRA Rejected</option>
+        <option value="Panel">Panel</option>
+        <option value="No Panel">No Panel</option>
+        <option value="Other">Other</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Additional Outcome Reasons:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Aditional Outcome Reasons']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Next Assessment Date:</th>
+    <td class="active-code-td">
+      <input
+        type="date"
+        name="level"
+        [(ngModel)]="valueData['Next Assessment Date']"
+      />
+    </td>
+  </tr>
+</table>
+
+<button
+  (click)="updateSectionForm()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Update Record
+</button>
+
+<h3>2. Active Ingredient Identity</h3>
+<button
+  (click)="openGenInfoSection2Popup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Subsection Name</th>
+      <th>Active Code</th>
+      <th>Active Name</th>
+      <th>CAS Number</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoSection2Data">
+      <td>{{ item.Subsection_Name }}</td>
+      <td>{{ item.Active_Code }}</td>
+      <td>{{ item.Active_Name }}</td>
+      <td>{{ item.CAS_Number }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoSection2Popup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoSection2Item(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoSection2Data.length === 0">
+      <td colspan="6" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoSection2Popup">
+  <form (ngSubmit)="submitGenInfoSection2Form(editGenInfoSection2Mode)">
+    <h2>{{ editGenInfoSection2Mode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeGenInfoSection2Popup()">x</button>
+    <input
+      type="hidden"
+      name="sectionNumber"
+      [(ngModel)]="newGenInfoSection2Item.row_id"
+      value="2"
+      required
+    />
+
+    <label for="subsectionName">Subsection Name:</label>
+    <select
+      name="documentName"
+      [(ngModel)]="newGenInfoSection2Item.Subsection_Name"
+      required
+    >
+      <option value="Parent">Parent</option>
+      <option value="Derivatives">Derivatives</option>
+    </select>
+
+    <label for="activeCode">Active Code:</label>
+    <input
+      type="text"
+      name="activeCode"
+      [(ngModel)]="newGenInfoSection2Item.Active_Code"
+      required
+    />
+
+    <label for="activeName">Active Name:</label>
+    <input
+      type="text"
+      name="activeName"
+      [(ngModel)]="newGenInfoSection2Item.Active_Name"
+      required
+    />
+
+    <label for="casNumber">CAS Number:</label>
+    <input
+      type="text"
+      name="casNumber"
+      [(ngModel)]="newGenInfoSection2Item.CAS_Number"
+      required
+    />
+
+    <button type="submit">
+      {{ editGenInfoSection2Mode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h3>3. Regulatory History</h3>
+<h4>3.1. Initial TGAI registration</h4>
+<button
+  (click)="openGenInfoSection3Popup(); showGenInfoSection31Popup = true"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>First Registered Date</th>
+      <th>First Registration Submission Number</th>
+      <th>First Registration Submission Type</th>
+      <th>Registration Number</th>
+      <th>Registration Status</th>
+      <th>Associated Publication RDD</th>
+      <th>PMRA Number RDD</th>
+      <th>Date of SMC2 BN for RDD</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoSection31Data">
+      <td>{{ item.First_Registered_Date }}</td>
+      <td>{{ item.First_Registration_Submission_Number }}</td>
+      <td>{{ item.First_Registration_Submission_Type }}</td>
+      <td>{{ item.Registration_Number }}</td>
+      <td>{{ item.Registration_Status }}</td>
+      <td>{{ item.Associated_Publication_RDD }}</td>
+      <td>{{ item.PMRA_Number_RDD }}</td>
+      <td>{{ item.Date_of_SMC2_BN_for_RDD }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button
+          (click)="
+            openGenInfoSection3Popup(item); showGenInfoSection31Popup = true
+          "
+        >
+          Edit
+        </button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoSection3Item(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoSection31Data.length === 0">
+      <td colspan="11" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoSection31Popup">
+  <form
+    (ngSubmit)="
+      submitGenInfoSection3Form(
+        editGenInfoSection3Mode,
+        'Initial TGAI registration'
+      );
+      showGenInfoSection31Popup = false
+    "
+  >
+    <h2>{{ editGenInfoSection3Mode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="showGenInfoSection31Popup = false">
+      x
+    </button>
+
+    <label for="firstRegisteredDate">First Registered Date:</label>
+    <input
+      type="date"
+      name="firstRegisteredDate"
+      [(ngModel)]="newGenInfoSection3Item.First_Registered_Date"
+      required
+    />
+
+    <label for="firstRegistrationSubmissionNumber">
+      First Registration Submission Number:
+    </label>
+    <input
+      type="text"
+      name="firstRegistrationSubmissionNumber"
+      [(ngModel)]="newGenInfoSection3Item.First_Registration_Submission_Number"
+      required
+    />
+
+    <label for="firstRegistrationSubmissionType">
+      First Registration Submission Type:
+    </label>
+    <select
+      name="firstRegistrationSubmissionType"
+      [(ngModel)]="newGenInfoSection3Item.First_Registration_Submission_Type"
+      required
+    >
+      <option value="New Product Registration">New Product Registration</option>
+      <option value="Amendment">Amendment</option>
+      <option value="Re-evaluation">Re-evaluation</option>
+    </select>
+
+    <label for="registrationNumber">Registration Number:</label>
+    <input
+      type="number"
+      name="registrationNumber"
+      [(ngModel)]="newGenInfoSection3Item.Registration_Number"
+      required
+    />
+
+    <label for="registrationStatus">Registration Status:</label>
+    <select
+      name="registrationStatus"
+      [(ngModel)]="newGenInfoSection3Item.Registration_Status"
+      required
+    >
+      <option value="C">Current</option>
+      <option value="H">Held</option>
+    </select>
+
+    <label for="associatedPublicationRDD"> Associated Publication RDD: </label>
+    <input
+      type="text"
+      name="associatedPublicationRDD"
+      [(ngModel)]="newGenInfoSection3Item.Associated_Publication_RDD"
+      required
+    />
+
+    <label for="pmraNumberRDD">PMRA Number RDD:</label>
+    <input
+      type="number"
+      name="pmraNumberRDD"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_RDD"
+      required
+    />
+    <label for="dateOfSMC2BNforRDD">Date of SMC2 BN for RDD:</label>
+    <input
+      type="date"
+      name="dateOfSMC2BNforRDD"
+      [(ngModel)]="newGenInfoSection3Item.Date_of_SMC2_BN_for_RDD"
+      required
+    />
+
+    <button type="submit">
+      {{ editGenInfoSection3Mode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h4>3.2. Completed (i-Done) or Open Re-evaluation</h4>
+<button
+  (click)="openGenInfoSection3Popup(); showGenInfoSection32Popup = true"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Re-Evaluation Status</th>
+      <th>Last Status Update Date</th>
+      <th>Re-Evaluation Submission Number</th>
+      <th>Re-Evaluation Submission Category</th>
+      <th>Re-Evaluation Submission Type</th>
+      <th>Scoping Document PMRA Number</th>
+      <th>Category</th>
+      <th>Associated Publication PRVD</th>
+      <th>PMRA Number PRVD</th>
+      <th>Date of SMC2 BN for PRVD</th>
+      <th>PMRA Number SMC2 PRVD</th>
+      <th>Associated Publication RVD</th>
+      <th>PMRA Number RVD</th>
+      <th>Date of SMC2 BN for RVD</th>
+      <th>PMRA Number SMC2 RVD</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoSection32Data">
+      <td>{{ item.Re_Evaluation_Status }}</td>
+      <td>{{ item.Last_Status_Update_Date }}</td>
+      <td>{{ item.Re_Evaluation_Submission_Number }}</td>
+      <td>{{ item.Re_Evaluation_Submission_Category }}</td>
+      <td>{{ item.Re_Evaluation_Submission_Type }}</td>
+      <td>{{ item.Scoping_Document_PMRA_Number }}</td>
+      <td>{{ item.Category }}</td>
+      <td>{{ item.Associated_Publication_PRVD }}</td>
+      <td>{{ item.PMRA_Number_PRVD }}</td>
+      <td>{{ item.Date_of_SMC2_BN_for_PRVD }}</td>
+      <td>{{ item.PMRA_Number_SMC2_PRVD }}</td>
+      <td>{{ item.Associated_Publication_RVD }}</td>
+      <td>{{ item.PMRA_Number_RVD }}</td>
+      <td>{{ item.Date_of_SMC2_BN_for_RVD }}</td>
+      <td>{{ item.PMRA_Number_SMC2_RVD }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button
+          (click)="
+            openGenInfoSection3Popup(item); showGenInfoSection32Popup = true
+          "
+        >
+          Edit
+        </button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoSection3Item(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoSection32Data.length === 0">
+      <td colspan="18" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoSection32Popup">
+  <form
+    (ngSubmit)="
+      submitGenInfoSection3Form(
+        editGenInfoSection3Mode,
+        'Completed (i-Done) or Open Re-evaluation'
+      );
+      showGenInfoSection32Popup = false
+    "
+  >
+    <h2>{{ editGenInfoSection3Mode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="showGenInfoSection32Popup = false">
+      x
+    </button>
+
+    <label for="reEvaluationStatus">Re-Evaluation Status:</label>
+    <input
+      type="text"
+      name="reEvaluationStatus"
+      [(ngModel)]="newGenInfoSection3Item.Re_Evaluation_Status"
+      required
+    />
+
+    <label for="lastStatusUpdateDate">Last Status Update Date:</label>
+    <input
+      type="date"
+      name="lastStatusUpdateDate"
+      [(ngModel)]="newGenInfoSection3Item.Last_Status_Update_Date"
+      required
+    />
+
+    <label for="reEvaluationSubmissionNumber"
+      >Re-Evaluation Submission Number:</label
+    >
+    <input
+      type="text"
+      name="reEvaluationSubmissionNumber"
+      [(ngModel)]="newGenInfoSection3Item.Re_Evaluation_Submission_Number"
+      required
+    />
+
+    <label for="reEvaluationSubmissionCategory"
+      >Re-Evaluation Submission Category:</label
+    >
+    <input
+      type="text"
+      name="reEvaluationSubmissionCategory"
+      [(ngModel)]="newGenInfoSection3Item.Re_Evaluation_Submission_Category"
+      required
+    />
+
+    <label for="reEvaluationSubmissionType"
+      >Re-Evaluation Submission Type:</label
+    >
+    <input
+      type="text"
+      name="reEvaluationSubmissionType"
+      [(ngModel)]="newGenInfoSection3Item.Re_Evaluation_Submission_Type"
+      required
+    />
+
+    <label for="scopingDocumentPMRANumber">Scoping Document PMRA Number:</label>
+    <input
+      type="number"
+      name="scopingDocumentPMRANumber"
+      [(ngModel)]="newGenInfoSection3Item.Scoping_Document_PMRA_Number"
+      required
+    />
+
+    <label for="category">Category:</label>
+    <input
+      type="number"
+      name="category"
+      [(ngModel)]="newGenInfoSection3Item.Category"
+      required
+    />
+
+    <label for="associatedPublicationPRVD">Associated Publication PRVD:</label>
+    <input
+      type="text"
+      name="associatedPublicationPRVD"
+      [(ngModel)]="newGenInfoSection3Item.Associated_Publication_PRVD"
+      required
+    />
+    <label for="pmraNumberPRVD">PMRA Number PRVD:</label>
+    <input
+      type="text"
+      name="pmraNumberPRVD"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_PRVD"
+      required
+    />
+
+    <label for="dateOfSMC2BNForPRVD">Date of SMC2 BN for PRVD:</label>
+    <input
+      type="date"
+      name="dateOfSMC2BNForPRVD"
+      [(ngModel)]="newGenInfoSection3Item.Date_of_SMC2_BN_for_PRVD"
+      [ngModelOptions]="{ standalone: true }"
+    />
+
+    <label for="pmraNumberSMC2PRVD">PMRA Number SMC2 PRVD:</label>
+    <input
+      type="text"
+      name="pmraNumberSMC2PRVD"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_SMC2_PRVD"
+      required
+    />
+
+    <label for="associatedPublicationRVD">Associated Publication RVD:</label>
+    <input
+      type="text"
+      name="associatedPublicationRVD"
+      [(ngModel)]="newGenInfoSection3Item.Associated_Publication_RVD"
+      required
+    />
+
+    <label for="pmraNumberRVD">PMRA Number RVD:</label>
+    <input
+      type="text"
+      name="pmraNumberRVD"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_RVD"
+      required
+    />
+
+    <label for="dateOfSMC2BNForRVD">Date of SMC2 BN for RVD:</label>
+    <input
+      type="date"
+      name="dateOfSMC2BNForRVD"
+      [(ngModel)]="newGenInfoSection3Item.Date_of_SMC2_BN_for_RVD"
+      required
+    />
+
+    <label for="pmraNumberSMC2RVD">PMRA Number SMC2 RVD:</label>
+    <input
+      type="text"
+      name="pmraNumberSMC2RVD"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_SMC2_RVD"
+      required
+    />
+    <button type="submit">
+      {{ editGenInfoSection3Mode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h4>3.3. Completed (i-Done) or Open Special Review</h4>
+<button
+  (click)="openGenInfoSection3Popup(); showGenInfoSection33Popup = true"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Special Review Status/Status</th>
+      <th>Special Review Last Status Update Date</th>
+      <th>Special Review Submission Number</th>
+      <th>Special Review Submission Category</th>
+      <th>Special Review Submission Type</th>
+      <th>Preliminary Analysis PMRA Document Number</th>
+      <th>Trigger</th>
+      <th>Associated Publication PSR</th>
+      <th>PMRA Number PSR</th>
+      <th>Date of SMC2 BN for PSR</th>
+      <th>PMRA Number SMC2 PSR</th>
+      <th>Associated Publication SRD</th>
+      <th>PMRA Number SRD</th>
+      <th>Date of SMC2 BN for SRD</th>
+      <th>PMRA Number SMC2 SRD</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoSection33Data">
+      <td>{{ item.Special_Review_Status_Status }}</td>
+      <td>{{ item.Special_Review_Last_Status_Update_Date }}</td>
+      <td>{{ item.Special_Review_Submission_Number }}</td>
+      <td>{{ item.Special_Review_Submission_Category }}</td>
+      <td>{{ item.Special_Review_Submission_Type }}</td>
+      <td>{{ item.Preliminary_Analysis_PMRA_Document_Number }}</td>
+      <td>{{ item.Trigger }}</td>
+      <td>{{ item.Associated_Publication_PSR }}</td>
+      <td>{{ item.PMRA_Number_PSR }}</td>
+      <td>{{ item.Date_of_SMC2_BN_for_PSR }}</td>
+      <td>{{ item.PMRA_Number_SMC2_PSR }}</td>
+      <td>{{ item.Associated_Publication_SRD }}</td>
+      <td>{{ item.PMRA_Number_SRD }}</td>
+      <td>{{ item.Date_of_SMC2_BN_for_SRD }}</td>
+      <td>{{ item.PMRA_Number_SMC2_SRD }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button
+          (click)="
+            openGenInfoSection3Popup(item); showGenInfoSection33Popup = true
+          "
+        >
+          Edit
+        </button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoSection3Item(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoSection33Data.length === 0">
+      <td colspan="18" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoSection33Popup">
+  <form
+    (ngSubmit)="
+      submitGenInfoSection3Form(
+        editGenInfoSection3Mode,
+        'Completed (i-Done) or Open Special Review'
+      );
+      showGenInfoSection33Popup = false
+    "
+  >
+    <h2>{{ editGenInfoSection3Mode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="showGenInfoSection33Popup = false">
+      x
+    </button>
+
+    <label for="specialReviewStatus">Special Review Status Status:</label>
+    <input
+      type="text"
+      name="specialReviewStatus"
+      [(ngModel)]="newGenInfoSection3Item.Special_Review_Status_Status"
+      required
+    />
+
+    <label for="specialReviewLastStatusUpdateDate"
+      >Special Review Last Status Update Date:</label
+    >
+    <input
+      type="date"
+      name="specialReviewLastStatusUpdateDate"
+      [(ngModel)]="
+        newGenInfoSection3Item.Special_Review_Last_Status_Update_Date
+      "
+      required
+    />
+
+    <label for="specialReviewSubmissionNumber"
+      >Special Review Submission Number:</label
+    >
+    <input
+      type="text"
+      name="specialReviewSubmissionNumber"
+      [(ngModel)]="newGenInfoSection3Item.Special_Review_Submission_Number"
+      required
+    />
+
+    <label for="specialReviewSubmissionCategory"
+      >Special Review Submission Category:</label
+    >
+    <input
+      type="text"
+      name="specialReviewSubmissionCategory"
+      [(ngModel)]="newGenInfoSection3Item.Special_Review_Submission_Category"
+      required
+    />
+
+    <label for="specialReviewSubmissionType"
+      >Special Review Submission Type:</label
+    >
+    <input
+      type="text"
+      name="specialReviewSubmissionType"
+      [(ngModel)]="newGenInfoSection3Item.Special_Review_Submission_Type"
+      required
+    />
+
+    <label for="preliminaryAnalysisPMRADocumentNumber"
+      >Preliminary Analysis PMRA Document Number:</label
+    >
+    <input
+      type="text"
+      name="preliminaryAnalysisPMRADocumentNumber"
+      [(ngModel)]="
+        newGenInfoSection3Item.Preliminary_Analysis_PMRA_Document_Number
+      "
+      required
+    />
+
+    <label for="trigger">Trigger:</label>
+    <textarea
+      name="trigger"
+      [(ngModel)]="newGenInfoSection3Item.Trigger"
+      required
+    ></textarea>
+
+    <label for="associatedPublicationPSR">Associated Publication PSR:</label>
+    <input
+      type="text"
+      name="associatedPublicationPSR"
+      [(ngModel)]="newGenInfoSection3Item.Associated_Publication_PSR"
+      required
+    />
+    <label for="pmraNumberPSR">PMRA Number PSR:</label>
+    <input
+      type="number"
+      name="pmraNumberPSR"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_PSR"
+      required
+    />
+
+    <label for="dateSMC2BNPSR">Date of SMC2 BN for PSR:</label>
+    <input
+      type="date"
+      name="dateSMC2BNPSR"
+      [(ngModel)]="newGenInfoSection3Item.Date_of_SMC2_BN_for_PSR"
+    />
+
+    <label for="pmraNumberSMC2PSR">PMRA Number SMC2 PSR:</label>
+    <input
+      type="number"
+      name="pmraNumberSMC2PSR"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_SMC2_PSR"
+    />
+
+    <label for="associatedPublicationSRD">Associated Publication SRD:</label>
+    <input
+      type="text"
+      name="associatedPublicationSRD"
+      [(ngModel)]="newGenInfoSection3Item.Associated_Publication_SRD"
+    />
+
+    <label for="pmraNumberSRD">PMRA Number SRD:</label>
+    <input
+      type="number"
+      name="pmraNumberSRD"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_SRD"
+    />
+
+    <label for="dateSMC2BNSRD">Date of SMC2 BN for SRD:</label>
+    <input
+      type="date"
+      name="dateSMC2BNSRD"
+      [(ngModel)]="newGenInfoSection3Item.Date_of_SMC2_BN_for_SRD"
+    />
+
+    <label for="pmraNumberSMC2SRD">PMRA Number SMC2 SRD:</label>
+    <input
+      type="number"
+      name="pmraNumberSMC2SRD"
+      [(ngModel)]="newGenInfoSection3Item.PMRA_Number_SMC2_SRD"
+    />
+
+    <button type="submit">
+      {{ editGenInfoSection3Mode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h4>3.4. TGAI Registrants List</h4>
+<button
+  (click)="openGenInfoRegistrantsPopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Registrant Name</th>
+      <th>Registrant Assigned Code</th>
+      <th>Registrant Assigned Number</th>
+      <th>Registration Number</th>
+      <th>Date First Registered</th>
+      <th>Initial Submission Category</th>
+      <th>Initial Submission Type</th>
+      <th>USC List</th>
+      <th>Registration Status</th>
+      <th>Comments</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoTGAIRegistrantsListData">
+      <td>{{ item.Registrant_Name }}</td>
+      <td>{{ item.Registrant_Assigned_Code }}</td>
+      <td>{{ item.Registrant_Assigned_Number }}</td>
+      <td>{{ item.Registration_Number }}</td>
+      <td>{{ item.Date_First_Registered }}</td>
+      <td>{{ item.Initial_Submission_Category }}</td>
+      <td>{{ item.Initial_Submission_Type }}</td>
+      <td>{{ item.USC_List }}</td>
+      <td>{{ item.Registration_Status }}</td>
+      <td>{{ item.Comments }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoRegistrantsPopup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteTGAIRegistrantsListItem(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoTGAIRegistrantsListData.length === 0">
+      <td colspan="13" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoRegistrantsPopup">
+  <form
+    (ngSubmit)="
+      submitGenInfoTGAIRegistrantsListForm(editGenInfoRegistrantsMode)
+    "
+  >
+    <h2>{{ editGenInfoRegistrantsMode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeTGAIRegistrantsListPopup()">
+      x
+    </button>
+
+    <label for="registrantName">Registrant Name:</label>
+    <input
+      type="text"
+      name="registrantName"
+      [(ngModel)]="newGenInfoRegistrantsItem.Registrant_Name"
+      required
+    />
+
+    <label for="registrantAssignedCode">Registrant Assigned Code:</label>
+    <input
+      type="text"
+      name="registrantAssignedCode"
+      [(ngModel)]="newGenInfoRegistrantsItem.Registrant_Assigned_Code"
+      required
+    />
+    <label for="registrantAssignedNumber">Registrant Assigned Number:</label>
+    <input
+      type="text"
+      name="registrantAssignedNumber"
+      [(ngModel)]="newGenInfoRegistrantsItem.Registrant_Assigned_Number"
+      required
+    />
+
+    <label for="registrationNumber">Registration Number:</label>
+    <input
+      type="text"
+      name="registrationNumber"
+      [(ngModel)]="newGenInfoRegistrantsItem.Registration_Number"
+      required
+    />
+
+    <label for="dateFirstRegistered">Date First Registered:</label>
+    <input
+      type="date"
+      name="dateFirstRegistered"
+      [(ngModel)]="newGenInfoRegistrantsItem.Date_First_Registered"
+      required
+    />
+
+    <label for="initialSubmissionCategory">Initial Submission Category:</label>
+    <select
+      name="initialSubmissionCategory"
+      [(ngModel)]="newGenInfoRegistrantsItem.Initial_Submission_Category"
+      required
+    >
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+    <label for="initialSubmissionType">Initial Submission Type:</label>
+    <input
+      type="text"
+      name="initialSubmissionType"
+      [(ngModel)]="newGenInfoRegistrantsItem.Initial_Submission_Type"
+      required
+    />
+
+    <label for="uscList">USC List:</label>
+    <input
+      type="number"
+      name="uscList"
+      [(ngModel)]="newGenInfoRegistrantsItem.USC_List"
+      required
+    />
+
+    <label for="registrationStatus">Registration Status:</label>
+    <select
+      name="registrationStatus"
+      [(ngModel)]="newGenInfoRegistrantsItem.Registration_Status"
+      required
+    >
+      <option value="Current">Current</option>
+      <option value="Pending">Pending</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+    <label for="comments">Comments:</label>
+
+    <textarea
+      name="comments"
+      [(ngModel)]="newGenInfoRegistrantsItem.Comments"
+      maxlength="1024"
+    ></textarea>
+
+    <button type="submit">
+      {{ editGenInfoSection3Mode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h4>3.5. Domestic and Internation Regulatory Status of Active Ingredient</h4>
+<button
+  (click)="openGenInfoRegulatorsPopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Regulator</th>
+      <th>Status of Active Ingredient</th>
+      <th>Status Date</th>
+      <th>Comments</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoRegulatorsData">
+      <td>{{ item.Regulator }}</td>
+      <td>{{ item.Status_of_Active_Ingredient }}</td>
+      <td>{{ item.Status_date }}</td>
+      <td>{{ item.Comments }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoRegulatorsPopup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoRegulatorsItem(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoRegulatorsData.length === 0">
+      <td colspan="7" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoRegulatorsPopup">
+  <form (ngSubmit)="submitGenInfoRegulatorsForm(editGenInfoRegulatorsMode)">
+    <h2>{{ editGenInfoRegulatorsMode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeGenInfoRegulatorsPopup()">
+      x
+    </button>
+    <label for="regulator">Regulator:</label>
+    <select name="regulator" [(ngModel)]="newGenInfoRegulatorsItem.Regulator">
+      <option value="PMRA">PMRA</option>
+      <option value="EPA">EPA</option>
+      <option value="EU">EU</option>
+      <option value="Australia">Australia</option>
+      <option value="Japan">Japan</option>
+      <option value="Other">Other</option>
+    </select>
+    
+
+    <label for="statusOfActiveIngredient">Status of Active Ingredient:</label>
+    <select name="status" [(ngModel)]="newGenInfoRegulatorsItem.Status_of_Active_Ingredient">
+      <option value="Registered">Registered</option>
+      <option value="Approved">Approved</option>
+      <option value="Rejected">Rejected</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <label for="statusDate">Status Date:</label>
+    <input
+      type="date"
+      name="statusDate"
+      [(ngModel)]="newGenInfoRegulatorsItem.Status_date"
+      required
+    />
+
+    <label for="comments">Comments:</label>
+    <textarea
+      name="comments"
+      [(ngModel)]="newGenInfoRegulatorsItem.Comments"
+      required
+    ></textarea>
+
+    <button type="submit">
+      {{ editGenInfoRegulatorsMode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+
+<h3>4. Background and Additional Information</h3>
+<h4>
+  4.1-4.3 Pre-Submission Consultations,Emergency Registrations & Research
+  Authorizations
+</h4>
+<button
+  (click)="openGenInfoBackgroundPopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Subsection Name</th>
+      <th>Subsection ID</th>
+      <th>Conducted</th>
+      <th>Submission Status Level</th>
+      <th>Submission Status Activity</th>
+      <th>PMRA Number</th>
+      <th>Purpose</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoBackgroundData">
+      <td>{{ item.Subsection_Name }}</td>
+      <td>{{ item.Subsection_ID }}</td>
+      <td>{{ item.Conducted }}</td>
+      <td>{{ item.Submission_Status_Level }}</td>
+      <td>{{ item.Submission_Status_Activity }}</td>
+      <td>{{ item.PMRA_Number }}</td>
+      <td>{{ item.Purpose }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoBackgroundPopup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoBackgroundItem(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoBackgroundData.length === 0">
+      <td colspan="11" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<div id="popup" *ngIf="showGenInfoBackgroundPopup">
+  <form (ngSubmit)="submitGenInfoBackgroundForm(editGenInfoBackgroundMode)">
+    <h2>{{ editGenInfoBackgroundMode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeGenInfoBackgroundPopup()">
+      x
+    </button>
+    <label for="subsectionName">Subsection Name:</label>
+    <select
+      name="documentName"
+      [(ngModel)]="newGenInfoBackgroundItem.Subsection_Name"
+      required
+    >
+      <option value="Pre-Submission Consultations">
+        Pre-Submission Consultations
+      </option>
+      <option value="Emergency Registrations">Emergency Registrations</option>
+      <option value="Research Authoizations">Research Authoizations</option>
+    </select>
+    <label for="conducted">Conducted:</label>
+    <select
+      name="conducted"
+      [(ngModel)]="newGenInfoBackgroundItem.Conducted"
+      required
+    >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
+
+    <label for="submissionStatusLevel">Submission Status Level:</label>
+    <input
+      type="text"
+      name="submissionStatusLevel"
+      [(ngModel)]="newGenInfoBackgroundItem.Submission_Status_Level"
+    />
+
+    <label for="submissionStatusActivity">Submission Status Activity:</label>
+    <input
+      type="text"
+      name="submissionStatusActivity"
+      [(ngModel)]="newGenInfoBackgroundItem.Submission_Status_Activity"
+    />
+
+    <label for="pmraNumber">PMRA Number:</label>
+    <input
+      type="number"
+      name="pmraNumber"
+      [(ngModel)]="newGenInfoBackgroundItem.PMRA_Number"
+    />
+
+    <label for="purpose">Purpose:</label>
+    <textarea
+      name="purpose"
+      [(ngModel)]="newGenInfoBackgroundItem.Purpose"
+    ></textarea>
+
+    <button type="submit">
+      {{ editGenInfoBackgroundMode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+
+<h4>4.4 End Product Marketing</h4>
+<button
+  (click)="openGenInfoEPMarketingPopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Restrictions</th>
+      <th>Registration Number</th>
+      <th>Product Name</th>
+      <th>Historical</th>
+      <th>Current</th>
+      <th>From Submission Number</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoEPMarketingData">
+      <td>{{ item.Restrictions }}</td>
+      <td>{{ item.Registration_Number }}</td>
+      <td>{{ item.Product_Name }}</td>
+      <td>{{ item.Historical }}</td>
+      <td>{{ item.Current }}</td>
+      <td>{{ item.From_Submission_Number }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoEPMarketingPopup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoEPMarketingItem(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoEPMarketingData.length === 0">
+      <td colspan="9" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoEPMarketingPopup">
+  <form (ngSubmit)="submitGenInfoEPMarketingForm(editGenInfoEPMarketingMode)">
+    <h2>{{ editGenInfoEPMarketingMode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeGenInfoEPMarketingPopup()">
+      x
+    </button>
+
+    <label for="restrictions">Restrictions:</label>
+    <select
+      name="restrictions"
+      [(ngModel)]="newGenInfoEPMarketingItem.Restrictions"
+      required
+    >
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+    <label for="registrationNumber">Registration Number:</label>
+    <input
+      type="number"
+      name="registrationNumber"
+      [(ngModel)]="newGenInfoEPMarketingItem.Registration_Number"
+      required
+    />
+
+    <label for="productName">Product Name:</label>
+    <input
+      type="text"
+      name="productName"
+      [(ngModel)]="newGenInfoEPMarketingItem.Product_Name"
+      required
+    />
+
+    <label for="historical">Historical:</label>
+    <select
+      name="historical"
+      [(ngModel)]="newGenInfoEPMarketingItem.Historical"
+      required
+    >
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
+    <label for="current">Current:</label>
+    <input
+      type="checkbox"
+      name="current"
+      [(ngModel)]="newGenInfoEPMarketingItem.Current"
+    />
+
+    <label for="fromSubmissionNumber">From Submission Number:</label>
+    <input
+      type="text"
+      name="fromSubmissionNumber"
+      [(ngModel)]="newGenInfoEPMarketingItem.From_Submission_Number"
+    /><button type="submit">
+      {{ editGenInfoRegulatorsMode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h4>4.5 ROEB Compliance Audit Trail</h4>
+<button
+  (click)="openGenInfoCompliancePopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Sector</th>
+      <th>PCPA Contravention</th>
+      <th>Date of Reported Contravention</th>
+      <th>Product Description at Time of Contravention</th>
+      <th>Corrective Action Taken</th>
+      <th>Compliance Status of Registrant at Time of Contravention</th>
+      <th>Additional Information</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoComplianceData">
+      <td>{{ item.Sector }}</td>
+      <td>{{ item.PCPA_Contravention }}</td>
+      <td>{{ item.Date_Of_Reported_Contravention }}</td>
+      <td>{{ item.Product_Description }}</td>
+      <td>{{ item.Corrective_Action_Taken }}</td>
+      <td>
+        {{ item.Compliance_Status }}
+      </td>
+      <td>{{ item.Additional_Information }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoCompliancePopup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoComplianceItem(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoComplianceData.length === 0">
+      <td colspan="9" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="popup" *ngIf="showGenInfoCompliancePopup">
+  <form (ngSubmit)="submitGenInfoComplianceForm(editGenInfoComplianceMode)">
+    <h2>{{ editGenInfoComplianceMode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeGenInfoCompliancePopup()">
+      x
+    </button>
+
+    <label for="sector">Sector:</label>
+    <input
+      type="text"
+      name="sector"
+      [(ngModel)]="newGenInfoComplianceItem.Sector"
+      required
+    />
+
+    <label for="pCPAContravention">PCPA Contravention:</label>
+    <input
+      type="text"
+      name="pCPAContravention"
+      [(ngModel)]="newGenInfoComplianceItem.PCPA_Contravention"
+      required
+    />
+
+    <label for="dateOfReportedContravention"
+      >Date of Reported Contravention:</label
+    >
+    <input
+      type="date"
+      name="dateOfReportedContravention"
+      [(ngModel)]="newGenInfoComplianceItem.Date_Of_Reported_Contravention"
+      required
+    />
+
+    <label for="productDescriptionAtTimeOfContravention"
+      >Product Description at Time of Contravention:</label
+    >
+    <textarea
+      name="productDescriptionAtTimeOfContravention"
+      [(ngModel)]="newGenInfoComplianceItem.Product_Description"
+      rows="4"
+      required
+    ></textarea>
+
+    <label for="correctiveActionTaken">Corrective Action Taken:</label>
+    <textarea
+      name="correctiveActionTaken"
+      [(ngModel)]="newGenInfoComplianceItem.Corrective_Action_Taken"
+      rows="4"
+      required
+    ></textarea>
+
+    <label for="complianceStatusOfRegistrantAtTimeOfContravention"
+      >Compliance Status of Registrant at Time of Contravention:</label
+    >
+    <select
+      name="complianceStatusOfRegistrantAtTimeOfContravention"
+      [(ngModel)]="newGenInfoComplianceItem.Compliance_Status"
+      required
+    >
+      <option value="Compliant">Compliant</option>
+      <option value="Non-Compliant">Non-Compliant</option>
+    </select>
+
+    <label for="additionalInformation">Additional Information:</label>
+    <textarea
+      name="additionalInformation"
+      [(ngModel)]="newGenInfoComplianceItem.Additional_Information"
+      rows="4"
+      required
+    ></textarea>
+
+    <button type="submit">
+      {{ editGenInfoComplianceMode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h4>4.6 Information from Call-Line</h4>
+<button
+  (click)="openGenInfoInfoLinePopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Date Received</th>
+      <th>Comments Received</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoInfoLineData">
+      <td>{{ item.Date_Received }}</td>
+      <td>{{ item.Comments_Received }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoInfoLinePopup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoInfoLineItem(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoInfoLineData.length === 0">
+      <td colspan="5" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoInfoLinePopup">
+  <form (ngSubmit)="submitGenInfoInfoLineForm(editGenInfoInfoLineMode)">
+    <h2>{{ editGenInfoInfoLineMode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeGenInfoInfoLinePopup()">x</button>
+
+    <label for="dateReceived">Date Received:</label>
+    <input
+      type="date"
+      name="dateReceived"
+      [(ngModel)]="newGenInfoInfoLineItem.Date_Received"
+      required
+    />
+
+    <label for="commentsReceived">Comments Received:</label>
+    <textarea
+      name="commentsReceived"
+      [(ngModel)]="newGenInfoInfoLineItem.Comments_Received"
+      required
+    ></textarea>
+
+    <button type="submit">
+      {{ editGenInfoInfoLineMode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h4>4.7 TGAI and Eps Unfulfilled Conditions</h4>
+<button
+  (click)="openGenInfoTGAI_EP_UnfulfilledConditionsPopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>TGAI_EP_MA</th>
+      <th>Registration Number</th>
+      <th>PMRA Number</th>
+      <th>Due Date</th>
+      <th>DACO Number</th>
+      <th>Unfulfilled Requirements</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoTGAI_EP_UnfulfilledConditionsData">
+      <td>{{ item.State }}</td>
+      <td>{{ item.TGAI_EP_MA }}</td>
+      <td>{{ item.Registration_Number }}</td>
+      <td>{{ item.PMRA_Number }}</td>
+      <td>{{ item.Due_date }}</td>
+      <td>{{ item.DACO_Number }}</td>
+      <td>{{ item.Unfulfilled_Requirements }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoTGAI_EP_UnfulfilledConditionsPopup(item)">
+          Edit
+        </button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoTGAI_EP_UnfulfilledConditionsItem(item)">
+          Delete
+        </button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoTGAI_EP_UnfulfilledConditionsData.length === 0">
+      <td colspan="9" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoTGAI_EP_UnfulfilledConditionsPopup">
+  <form
+    (ngSubmit)="
+      submitGenInfoTGAI_EP_UnfulfilledConditionsForm(
+        editGenInfoTGAI_EP_UnfulfilledConditionsMode
+      )
+    "
+  >
+    <h2>
+      {{ editGenInfoTGAI_EP_UnfulfilledConditionsMode ? 'Edit' : 'Add' }} Record
+    </h2>
+    <button
+      class="close-icon"
+      (click)="closeGenInfoTGAI_EP_UnfulfilledConditionsItem()"
+    >
+      x
+    </button>
+    <input
+      type="hidden"
+      name="sectionNumber"
+      [(ngModel)]="newGenInfoTGAI_EP_UnfulfilledConditionsItem.row_id"
+      value="5"
+      required
+    />
+
+    <label for="state">State:</label>
+    <select
+      name="state"
+      [(ngModel)]="newGenInfoTGAI_EP_UnfulfilledConditionsItem.State"
+      required
+    >
+      <option value="1">True</option>
+      <option value="0">False</option>
+    </select>
+
+    <label for="tgaiEpMa">TGAI_EP_MA:</label>
+    <input
+      type="text"
+      name="tgaiEpMa"
+      [(ngModel)]="newGenInfoTGAI_EP_UnfulfilledConditionsItem.TGAI_EP_MA"
+      required
+    />
+
+    <label for="registrationNumber">Registration Number:</label>
+    <input
+      type="number"
+      name="registrationNumber"
+      [(ngModel)]="
+        newGenInfoTGAI_EP_UnfulfilledConditionsItem.Registration_Number
+      "
+      required
+    />
+
+    <label for="pmraNumber">PMRA Number:</label>
+    <input
+      type="number"
+      name="pmraNumber"
+      [(ngModel)]="newGenInfoTGAI_EP_UnfulfilledConditionsItem.PMRA_Number"
+      required
+    />
+
+    <label for="dueDate">Due Date:</label>
+    <input
+      type="date"
+      name="dueDate"
+      [(ngModel)]="newGenInfoTGAI_EP_UnfulfilledConditionsItem.Due_date"
+      required
+    />
+
+    <label for="dacoNumber">DACO Number:</label>
+    <input
+      type="text"
+      name="dacoNumber"
+      [(ngModel)]="newGenInfoTGAI_EP_UnfulfilledConditionsItem.DACO_Number"
+      required
+    />
+
+    <label for="unfulfilledRequirements">Unfulfilled Requirements:</label>
+    <textarea
+      name="unfulfilledRequirements"
+      [(ngModel)]="
+        newGenInfoTGAI_EP_UnfulfilledConditionsItem.Unfulfilled_Requirements
+      "
+      required
+    ></textarea>
+
+    <button type="submit">
+      {{ editGenInfoTGAI_EP_UnfulfilledConditionsMode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h3>5. ALD Science Group Involvement</h3>
+<button
+  (click)="openGenInfoScienceTeamALDsPopup()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Add New Record
+</button>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>TOX</th>
+      <th>TOX Details</th>
+      <th>Dietary</th>
+      <th>Dietary Details</th>
+      <th>Occupational</th>
+      <th>Occupational Details</th>
+      <th>IRP</th>
+      <th>IRP Details</th>
+      <th>RRS</th>
+      <th>RRS Details</th>
+      <th>EAD</th>
+      <th>EAD Details</th>
+      <th>EAD WM</th>
+      <th>EAD WM Details</th>
+      <th>VALUE</th>
+      <th>VALUE Details</th>
+      <th>CES</th>
+      <th>CES Details</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+      <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of genInfoScienceTeamALDsData">
+      <td>{{ item.TOX }}</td>
+      <td>{{ item.TOX_Details }}</td>
+      <td>{{ item.Dietary }}</td>
+      <td>{{ item.Dietary_Details }}</td>
+      <td>{{ item.Occupational }}</td>
+      <td>{{ item.Occupational_Details }}</td>
+      <td>{{ item.IRP }}</td>
+      <td>{{ item.IRP_Details }}</td>
+      <td>{{ item.RRS }}</td>
+      <td>{{ item.RRS_Details }}</td>
+      <td>{{ item.EAD }}</td>
+      <td>{{ item.EAD_Details }}</td>
+      <td>{{ item.EAD_WM }}</td>
+      <td>{{ item.EAD_WM_Details }}</td>
+      <td>{{ item.VALUE }}</td>
+      <td>{{ item.VALUE_Details }}</td>
+      <td>{{ item.CES }}</td>
+      <td>{{ item.CES_Details }}</td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="openGenInfoScienceTeamALDsPopup(item)">Edit</button>
+      </td>
+      <td class="hide-print" *ngIf="valueData['flag'] === 0">
+        <button (click)="deleteGenInfoScienceTeamALDsItem(item)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="genInfoScienceTeamALDsData.length === 0">
+      <td colspan="21" style="text-align: center">No Record Found</td>
+    </tr>
+  </tbody>
+</table>
+<!-- The popup form -->
+<div id="popup" *ngIf="showGenInfoScienceTeamALDsPopup">
+  <form
+    (ngSubmit)="
+      submitGenInfoScienceTeamALDsForm(editGenInfoScienceTeamALDsMode)
+    "
+  >
+    <h2>{{ editGenInfoScienceTeamALDsMode ? 'Edit' : 'Add' }} Record</h2>
+    <button class="close-icon" (click)="closeGenInfoScienceTeamALDsPopup()">
+      x
+    </button>
+    <label for="tox">Tox:</label>
+    <select name="tox" [(ngModel)]="newGenInfoScienceTeamALDsItem.TOX">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <br />
+
+    <label for="toxDetails">Tox Details:</label>
+    <textarea
+      name="toxDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.TOX_Details"
+      rows="4"
+      cols="50"
+      required
+    ></textarea>
+    <br />
+
+    <label for="dietary">Dietary:</label>
+    <select name="dietary" [(ngModel)]="newGenInfoScienceTeamALDsItem.Dietary">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <br />
+
+    <label for="dietaryDetails">Dietary Details:</label>
+    <textarea
+      name="dietaryDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.Dietary_Details"
+      rows="4"
+      cols="50"
+      required
+    ></textarea>
+    <br />
+
+    <label for="occupational">Occupational:</label>
+    <select
+      name="occupational"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.Occupational"
+    >
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <br />
+
+    <label for="occupationalDetails">Occupational Details:</label>
+    <textarea
+      name="occupationalDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.Occupational_Details"
+      rows="4"
+      cols="50"
+      required
+    ></textarea>
+    <br />
+
+    <label for="irp">IRP:</label>
+    <select name="irp" [(ngModel)]="newGenInfoScienceTeamALDsItem.IRP">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <br />
+    <label for="irpDetails">IRP Details:</label>
+
+    <textarea
+      name="irpDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.IRP_Details"
+      required
+    ></textarea>
+    <label for="rrs">RRS:</label>
+    <select name="rrs" [(ngModel)]="newGenInfoScienceTeamALDsItem.RRS" required>
+      <option value="" disabled>Select an option</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="rrsDetails">RRS Details:</label>
+
+    <textarea
+      name="rrsDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.RRS_Details"
+      required
+    ></textarea>
+    <label for="ead">EAD:</label>
+    <select name="ead" [(ngModel)]="newGenInfoScienceTeamALDsItem.EAD" required>
+      <option value="" disabled>Select an option</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="eadDetails">EAD Details:</label>
+
+    <textarea
+      name="eadDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.EAD_Details"
+      required
+    ></textarea>
+    <label for="eadWm">EAD WM:</label>
+    <select
+      name="eadWm"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.EAD_WM"
+      required
+    >
+      <option value="" disabled>Select an option</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="eadWmDetails">EAD WM Details:</label>
+
+    <textarea
+      name="eadWmDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.EAD_WM_Details"
+      required
+    ></textarea>
+    <label for="value">VALUE:</label>
+    <select
+      name="value"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.VALUE"
+      required
+    >
+      <option value="" disabled>Select an option</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="valueDetails">VALUE Details:</label>
+
+    <textarea
+      name="valueDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.VALUE_Details"
+      required
+    ></textarea>
+    <label for="ces">CES:</label>
+    <select name="ces" [(ngModel)]="newGenInfoScienceTeamALDsItem.CES" required>
+      <option value="" disabled>Select an option</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="cesDetails">CES Details:</label>
+
+    <textarea
+      name="cesDetails"
+      [(ngModel)]="newGenInfoScienceTeamALDsItem.CES_Details"
+      required
+    ></textarea>
+
+    <button type="submit">
+      {{ editGenInfoTGAI_EP_UnfulfilledConditionsMode ? 'Update' : 'Save' }}
+    </button>
+  </form>
+</div>
+<h3>Section Head Feedback</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Comments</th>
+      <th>Feedback</th>
+      <th *ngIf="newApprovalItem.DateofFeedback">Date of Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <textarea
+          rows="4"
+          cols="50"
+          maxlength="1024"
+          [(ngModel)]="newApprovalItem.Comments"
+          [disabled]="shmode !== '1'"
+        ></textarea>
+      </td>
+      <td *ngIf="shmode === '1'">
+        <select
+          [(ngModel)]="newApprovalItem.Feedback"
+          [disabled]="shmode !== '1'"
+        >
+          <option value="Approved">Approved</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </td>
+      <td *ngIf="shmode === '0' || !shmode">
+        {{ newApprovalItem.Feedback }}
+      </td>
+      <td *ngIf="newApprovalItem.DateofFeedback">
+        {{ newApprovalItem.DateofFeedback }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button
+  (click)="requestForApproval()"
+  [ngStyle]="{
+    'background-color':
+      newApprovalItem.Feedback === 'Approved' && shmode !== '1' ? 'green' : ''
+  }"
+  [disabled]="newApprovalItem.Feedback === 'Approved' && shmode !== '1'"
+>
+  {{
+    shmode === '1'
+      ? 'Submit Feedback'
+      : newApprovalItem.Feedback === 'Approved' && shmode !== '1'
+      ? 'Approved'
+      : 'Request Approval'
+  }}
+</button>

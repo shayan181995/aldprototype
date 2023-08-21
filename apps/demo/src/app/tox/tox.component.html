@@ -1,0 +1,1900 @@
+<h3>1. Main</h3>
+<br />
+<br />
+<table *ngIf="valueData">
+  <tr>
+    <th>Anchor Submission Number:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Anchor Submission Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>ALD Report to Generate:</th>
+    <td>{{ valueData['ALD Report to Generate'] }}</td>
+  </tr>
+  <tr>
+    <th>Evaluator:</th>
+    <td>{{ valueData['Evaluator'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Required:</th>
+    <td>{{ valueData['ALD Required'] === 1 ? 'Yes' : 'No' }}</td>
+  </tr>
+  <tr>
+    <th>Program Activity:</th>
+    <td>{{ valueData['Program Activity'] }}</td>
+  </tr>
+  <tr>
+    <th>Active Code:</th>
+    <td>{{ valueData['Active Code'] }}</td>
+  </tr>
+  <tr>
+    <th>Active Name:</th>
+    <td>{{ valueData['Active Name'] }}</td>
+  </tr>
+  <tr>
+    <th>Cluster Name:</th>
+    <td>{{ valueData['Cluster Name'] }}</td>
+  </tr>
+  <tr>
+    <th>Related Submission Numbers:</th>
+    <td>{{ valueData['Related Submission Numbers'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Number:</th>
+    <td>{{ valueData['Submission Number'] }}</td>
+  </tr>
+  <tr>
+    <th>Initiation Date:</th>
+    <td>{{ valueData['Initiation Date'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Number:</th>
+    <td>{{ valueData['ALD Number'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Category:</th>
+    <td>{{ valueData['Submission Category'] }}</td>
+  </tr>
+  <tr>
+    <th>Submission Type:</th>
+    <td>{{ valueData['Submission Type'] }}</td>
+  </tr>
+  <tr>
+    <th>Level:</th>
+    <td>{{ valueData['Level'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD created on:</th>
+    <td>{{ valueData['ALD created on'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Last Updated on:</th>
+    <td>{{ valueData['ALD Last Updated on'] }}</td>
+  </tr>
+  <tr>
+    <th>ALD Approved On:</th>
+    <td>{{ newApprovalItem.DateofFeedback }}</td>
+  </tr>
+  <tr>
+    <th>ALD Approved By:</th>
+    <td>
+      {{ newApprovalItem.DateofFeedback ? valueData['ALD Approved By'] : '' }}
+    </td>
+  </tr>
+  <tr>
+    <th>Evaluator Sub-Group:</th>
+    <td>{{ valueData['Evaluator sub-Group'] }}</td>
+  </tr>
+  <tr>
+    <th>USCs:</th>
+    <td class="active-code-td">
+      <input type="number" name="level" [(ngModel)]="valueData['USCs']" />
+    </td>
+  </tr>
+  <tr>
+    <th>Purpose of Submission:</th>
+    <td class="active-code-td">
+      <select
+        name="purposeOfSubmission"
+        [(ngModel)]="valueData['Purpose of Submission']"
+        required
+      >
+        <option value="Major New Use">Major New Use</option>
+        <option value="Major Use">Major Use</option>
+        <option value="Minor Use">Minor Use</option>
+        <option value="Re-Evaluation">Re-Evaluation</option>
+        <option value="Special Review">Special Review</option>
+        <option value="Cumulative Risk Assessment">
+          Cumulative Risk Assessment
+        </option>
+        <option value="Notice of Objection-PA2">Notice of Objection-PA2</option>
+        <option value="Notice of Objection-PA1">Notice of Objection-PA1</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Additional Purpose of Submission Comments:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Additional Purpose of Submission Comments']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Scoping Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Scoping Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN1:</th>
+    <td class="active-code-td">
+      <input type="text" name="level" [(ngModel)]="valueData['SMC BN1']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN1 Date:</th>
+    <td class="active-code-td">
+      <input type="date" name="level" [(ngModel)]="valueData['SMC BN1 Date']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN2:</th>
+    <td class="active-code-td">
+      <input type="text" name="level" [(ngModel)]="valueData['SMC BN2']" />
+    </td>
+  </tr>
+  <tr>
+    <th>SMC BN2 Date:</th>
+    <td class="active-code-td">
+      <input type="date" name="level" [(ngModel)]="valueData['SMC BN2 Date']" />
+    </td>
+  </tr>
+  <tr>
+    <th>Proposed Decision Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Proposed Decision Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Final Decision Document Number:</th>
+    <td class="active-code-td">
+      <input
+        type="number"
+        name="level"
+        [(ngModel)]="valueData['Final Decision Document Number']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Outcome:</th>
+    <td class="active-code-td">
+      <select name="outcome" [(ngModel)]="valueData['Outcome']">
+        <option value="Registered">Registered</option>
+        <option value="Continued Registration">Continued Registration</option>
+        <option value="Voluntary Withdrawal">Voluntary Withdrawal</option>
+        <option value="PMRA Rejected">PMRA Rejected</option>
+        <option value="Panel">Panel</option>
+        <option value="No Panel">No Panel</option>
+        <option value="Other">Other</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Additional Outcome Reasons:</th>
+    <td class="active-code-td">
+      <input
+        type="text"
+        name="level"
+        [(ngModel)]="valueData['Aditional Outcome Reasons']"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th>Next Assessment Date:</th>
+    <td class="active-code-td">
+      <input
+        type="date"
+        name="level"
+        [(ngModel)]="valueData['Next Assessment Date']"
+      />
+    </td>
+  </tr>
+</table>
+
+<button
+  (click)="updateSectionForm()"
+  class="hide-print"
+  *ngIf="valueData['flag'] === 0"
+>
+  Update Record
+</button>
+<span *ngIf="valueData['ALD Required'] === 1">
+  <h3>2.1 Summary Table</h3>
+  <button
+    (click)="openSummaryTablePopup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>CAS Number</th>
+        <th>Exposure Scenario</th>
+        <th>Exposure Scenario Subtype</th>
+        <th>Study</th>
+        <th>Point of Departure and End Point</th>
+        <th>CAF or Target MOE</th>
+        <th>Reference Document</th>
+        <th>PMRA Number</th>
+        <th>ARfD Value</th>
+        <th>ARfD Unit</th>
+        <th>Actual End Date</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of summaryTableData">
+        <td>{{ item.CAS_Number }}</td>
+        <td>{{ item.Exposure_Scenario }}</td>
+        <td>{{ item.Exposure_Scenario_Subtype }}</td>
+        <td>{{ item.Study }}</td>
+        <td>{{ item.Point_of_Departure_and_End_Point }}</td>
+        <td>{{ item.CAF_or_Target_MOE }}</td>
+        <td>{{ item.Reference_Document }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.ARfD_Value }}</td>
+        <td>{{ item.ARfD_Unit }}</td>
+        <td>{{ item.Actual_End_Date }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openSummaryTablePopup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteSummaryTableItem(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="summaryTableData.length === 0">
+        <td colspan="14" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showSummaryTablePopup">
+    <form (ngSubmit)="SubmitSummaryTableForm(editSummaryTableMode)">
+      <h2>{{ editSummaryTableMode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeSummaryTablePopup()">x</button>
+      <label for="casNumber">CAS Number:</label>
+      <input
+        type="text"
+        name="casNumber"
+        [(ngModel)]="newSummaryTableItem.CAS_Number"
+        required
+      />
+
+      <label for="exposureScenario">Exposure Scenario:</label>
+      <select
+        name="exposureScenario"
+        [(ngModel)]="newSummaryTableItem.Exposure_Scenario"
+        required
+      >
+        <option value="">--Select--</option>
+        <option value="Acute Dietary">Acute Dietary</option>
+        <option value="Repeated Dietary">Repeated Dietary</option>
+        <option value="Occupational">Occupational</option>
+        <option value="Residential">Residential</option>
+        <option value="Aggregate">Aggregate</option>
+        <option value="Cancer">Cancer</option>
+      </select>
+
+      <label for="exposureScenarioSubtype">Exposure Scenario Subtype:</label>
+      <ng-container
+        *ngIf="
+          newSummaryTableItem.Exposure_Scenario === 'Acute Dietary' ||
+          newSummaryTableItem.Exposure_Scenario === 'Repeated Dietary'
+        "
+      >
+        <select
+          name="exposureScenarioSubtype"
+          [(ngModel)]="newSummaryTableItem.Exposure_Scenario_Subtype"
+          required
+        >
+          <option value="All Populations" selected="selected">
+            All Populations
+          </option>
+        </select>
+      </ng-container>
+
+      <ng-container
+        *ngIf="
+          newSummaryTableItem.Exposure_Scenario === 'Occupational' ||
+          newSummaryTableItem.Exposure_Scenario === 'Residential'
+        "
+      >
+        <select
+          name="exposureScenarioSubtype"
+          [(ngModel)]="newSummaryTableItem.Exposure_Scenario_Subtype"
+          required
+        >
+          <option value="">--Select--</option>
+          <option value="Short-Dermal">Short-Dermal</option>
+          <option value="Intermediate-Dermal">Intermediate-Dermal</option>
+          <option value="Long-Dermal">Long-Dermal</option>
+          <option value="Short-Inhalation">Short-Inhalation</option>
+          <option value="Intermediate-Inhalation">
+            Intermediate-Inhalation
+          </option>
+          <option value="Long-Inhalation">Long-Inhalation</option>
+        </select>
+      </ng-container>
+
+      <ng-container
+        *ngIf="newSummaryTableItem.Exposure_Scenario === 'Aggregate'"
+      >
+        <select
+          name="exposureScenarioSubtype"
+          [(ngModel)]="newSummaryTableItem.Exposure_Scenario_Subtype"
+          required
+        >
+          <option value="">--Select--</option>
+          <option value="Oral">Oral</option>
+          <option value="Dermal">Dermal</option>
+          <option value="Inhalation">Inhalation</option>
+          <option value="Incidental Oral">Incidental Oral</option>
+        </select>
+      </ng-container>
+
+      <ng-container *ngIf="newSummaryTableItem.Exposure_Scenario === 'Cancer'">
+        <select
+          name="exposureScenarioSubtype"
+          [(ngModel)]="newSummaryTableItem.Exposure_Scenario_Subtype"
+          required
+        >
+          <option value="All Populations" selected="selected">
+            All Populations
+          </option>
+        </select>
+      </ng-container>
+
+      <label for="study">Study:</label>
+      <input
+        type="text"
+        name="study"
+        [(ngModel)]="newSummaryTableItem.Study"
+        required
+      />
+      <label for="pointOfDeparture">Point of Departure and End Point:</label>
+      <input
+        type="text"
+        name="pointOfDeparture"
+        [(ngModel)]="newSummaryTableItem.Point_of_Departure_and_End_Point"
+        required
+      />
+
+      <label for="cafOrTargetMOE">CAF or Target MOE:</label>
+      <input
+        type="number"
+        name="cafOrTargetMOE"
+        [(ngModel)]="newSummaryTableItem.CAF_or_Target_MOE"
+        required
+      />
+
+      <label for="referenceDocument">Reference Document:</label>
+      <input
+        type="text"
+        name="referenceDocument"
+        [(ngModel)]="newSummaryTableItem.Reference_Document"
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newSummaryTableItem.PMRA_Number"
+        required
+      />
+
+      <label for="arfdValue">ARfD Value:</label>
+      <input
+        type="text"
+        name="arfdValue"
+        [(ngModel)]="newSummaryTableItem.ARfD_Value"
+        required
+      />
+
+      <label for="arfdUnit">ARfD Unit:</label>
+      <input
+        type="text"
+        name="arfdUnit"
+        [(ngModel)]="newSummaryTableItem.ARfD_Unit"
+        required
+      />
+
+      <label for="actualEndDate">Actual End Date:</label>
+      <input
+        type="date"
+        name="actualEndDate"
+        [(ngModel)]="newSummaryTableItem.Actual_End_Date"
+        required
+      />
+
+      <button type="submit">
+        {{ editSummaryTableMode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+
+  <h3>2.2x - PCPA factor</h3>
+  <button
+    (click)="openTOXSectionsPopup(); showToxSection22Popup = true"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>PCPA Factor Characterized</th>
+        <th>Date</th>
+        <th>Name of Reference Document</th>
+        <th>Reference Document Table of Content Reference</th>
+        <th>PMRA Number</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSections22Data">
+        <td>{{ item.PCPA_Factor_Characterized }}</td>
+        <td>{{ item.Date }}</td>
+        <td>{{ item.Name_of_Reference_Document }}</td>
+        <td>{{ item.Reference_Document_Table_of_Content_Reference }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button
+            (click)="openTOXSectionsPopup(item); showToxSection22Popup = true"
+          >
+            Edit
+          </button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSectionsItem(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSections22Data.length === 0">
+        <td colspan="10" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection22Popup">
+    <form
+      (ngSubmit)="
+        submitToxSectionsForm(editTOXSectionsMode, '2.2');
+        showToxSection22Popup = false
+      "
+    >
+      <h2>{{ editTOXSectionsMode ? 'Edit' : 'Add' }} Record</h2>
+      <button
+        class="close-icon"
+        (click)="closeToxSectionsPopup(); showToxSection22Popup = false"
+      >
+        x
+      </button>
+      <label for="pcpaFactorCharacterized">PCPA Factor Characterized:</label>
+      <input
+        type="checkbox"
+        name="pcpaFactorCharacterized"
+        [(ngModel)]="newToxSections22232434Item.PCPA_Factor_Characterized"
+        required
+      />
+      <label for="date">Date:</label>
+      <input
+        type="date"
+        name="date"
+        [(ngModel)]="newToxSections22232434Item.Date"
+        required
+      />
+      <label for="nameOfReferenceDoc">Name of Reference Document:</label>
+      <input
+        type="text"
+        name="nameOfReferenceDoc"
+        [(ngModel)]="newToxSections22232434Item.Name_of_Reference_Document"
+        required
+      />
+
+      <label for="refDocTableOfContentRef"
+        >Reference Document Table of Content Reference:</label
+      >
+      <input
+        type="text"
+        name="refDocTableOfContentRef"
+        [(ngModel)]="
+          newToxSections22232434Item.Reference_Document_Table_of_Content_Reference
+        "
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSections22232434Item.PMRA_Number"
+        required
+      />
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        rows="4"
+        cols="50"
+        [(ngModel)]="newToxSections22232434Item.Comments"
+      ></textarea>
+
+      <button type="submit">
+        {{ editTOXSectionsMode ? 'Update' : 'Add' }}
+      </button>
+    </form>
+  </div>
+
+  <h3>2.3x - Other Uncertainty Factors</h3>
+  <button
+    (click)="openTOXSectionsPopup(); showToxSection23Popup = true"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name of Reference Document</th>
+        <th>Reference Document Table of Content Reference</th>
+        <th>PMRA Number</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSections23Data">
+        <td>{{ item.Date }}</td>
+        <td>{{ item.Name_of_Reference_Document }}</td>
+        <td>{{ item.Reference_Document_Table_of_Content_Reference }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button
+            (click)="openTOXSectionsPopup(item); showToxSection23Popup = true"
+          >
+            Edit
+          </button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSectionsItem(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSections23Data.length === 0">
+        <td colspan="8" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection23Popup">
+    <form
+      (ngSubmit)="
+        submitToxSectionsForm(editTOXSectionsMode, '2.3');
+        showToxSection23Popup = false
+      "
+    >
+      <h2>{{ editTOXSectionsMode ? 'Edit' : 'Add' }} Record</h2>
+      <button
+        class="close-icon"
+        (click)="closeToxSectionsPopup(); showToxSection23Popup = false"
+      >
+        x
+      </button>
+      <input
+        type="hidden"
+        name="sectionNumber"
+        [(ngModel)]="newToxSections22232434Item.Section_Number"
+        value="2.3"
+        required
+      />
+
+      <label for="date">Date:</label>
+      <input
+        type="date"
+        name="date"
+        [(ngModel)]="newToxSections22232434Item.Date"
+        required
+      />
+
+      <label for="nameOfReferenceDocument">Name of Reference Document:</label>
+      <input
+        type="text"
+        name="nameOfReferenceDocument"
+        [(ngModel)]="newToxSections22232434Item.Name_of_Reference_Document"
+        required
+      />
+
+      <label for="referenceDocumentTableOfContentReference"
+        >Reference Document Table of Content Reference:</label
+      >
+      <input
+        type="text"
+        name="referenceDocumentTableOfContentReference"
+        [(ngModel)]="
+          newToxSections22232434Item.Reference_Document_Table_of_Content_Reference
+        "
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSections22232434Item.PMRA_Number"
+        required
+      />
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newToxSections22232434Item.Comments"
+        required
+      ></textarea>
+
+      <button type="submit">
+        {{ editTOXSectionsMode ? 'Update' : 'Save' }}
+      </button>
+    </form>
+  </div>
+  <h3>2.4x - Toxicology Database</h3>
+  <button
+    (click)="openTOXSectionsPopup(); showToxSection24Popup = true"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name of Reference Document</th>
+        <th>Reference Document Table of Content Reference</th>
+        <th>PMRA Number</th>
+        <th>Comments</th>
+        <th>Reference TOX Review</th>
+        <th>Database Completion Comments</th>
+        <th>Tier 1 Studies Comment</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSections24Data">
+        <td>{{ item.Date }}</td>
+        <td>{{ item.Name_of_Reference_Document }}</td>
+        <td>{{ item.Reference_Document_Table_of_Content_Reference }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Comments }}</td>
+        <td>{{ item.Reference_TOX_Review }}</td>
+        <td>{{ item.Database_Completion_Comments }}</td>
+        <td>{{ item.Tier_1_Studies_Comment }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button
+            (click)="openTOXSectionsPopup(item); showToxSection24Popup = true"
+          >
+            Edit
+          </button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSectionsItem(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSections24Data.length === 0">
+        <td colspan="12" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection24Popup">
+    <form
+      (ngSubmit)="
+        submitToxSectionsForm(editTOXSectionsMode, '2.4');
+        showToxSection24Popup = false
+      "
+    >
+      <h2>{{ editTOXSectionsMode ? 'Edit' : 'Add' }} Record</h2>
+      <button
+        class="close-icon"
+        (click)="closeToxSectionsPopup(); showToxSection24Popup = false"
+      >
+        x
+      </button>
+      <div>
+        <label for="date">Date:</label>
+        <input
+          type="date"
+          name="date"
+          [(ngModel)]="newToxSections22232434Item.Date"
+          required
+        />
+      </div>
+      <div>
+        <label for="nameOfReferenceDocument">Name of Reference Document:</label>
+        <input
+          type="text"
+          name="nameOfReferenceDocument"
+          [(ngModel)]="newToxSections22232434Item.Name_of_Reference_Document"
+          required
+        />
+      </div>
+      <div>
+        <label for="referenceDocumentTableOfContentReference"
+          >Reference Document Table of Content Reference:</label
+        >
+        <input
+          type="text"
+          name="referenceDocumentTableOfContentReference"
+          [(ngModel)]="
+            newToxSections22232434Item.Reference_Document_Table_of_Content_Reference
+          "
+          required
+        />
+      </div>
+      <div>
+        <label for="pmraNumber">PMRA Number:</label>
+        <input
+          type="number"
+          name="pmraNumber"
+          [(ngModel)]="newToxSections22232434Item.PMRA_Number"
+          required
+        />
+      </div>
+      <div>
+        <label for="comments">Comments:</label>
+        <textarea
+          name="comments"
+          [(ngModel)]="newToxSections22232434Item.Comments"
+          maxlength="1024"
+        ></textarea>
+      </div>
+      <div>
+        <label for="referenceToxReview">Reference TOX Review:</label>
+        <input
+          type="text"
+          name="referenceToxReview"
+          [(ngModel)]="newToxSections22232434Item.Reference_TOX_Review"
+        />
+      </div>
+      <div>
+        <label for="databaseCompletionComments"
+          >Database Completion Comments:</label
+        >
+        <input
+          type="text"
+          name="databaseCompletionComments"
+          [(ngModel)]="newToxSections22232434Item.Database_Completion_Comments"
+        />
+      </div>
+      <div>
+        <label for="tier1StudiesComment">Tier 1 Studies Comment:</label>
+        <input
+          type="text"
+          name="tier1StudiesComment"
+          [(ngModel)]="newToxSections22232434Item.Tier_1_Studies_Comment"
+        />
+      </div>
+      <div class="button">
+        <button type="submit">
+          {{ editTOXSectionsMode ? 'Update' : 'Add' }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <h3>3x - Cumulative Risk Assessment</h3>
+  <button
+    (click)="openTOXSectionsPopup(); showToxSection3Popup = true"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Cumulative Risk Assessment Required Flag</th>
+        <th>Cumulative Risk Assessment Status</th>
+        <th>Date</th>
+        <th>PMRA Number</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSections3Data">
+        <td>{{ item.Cumulative_Risk_Assessment_Required_Flag }}</td>
+        <td>{{ item.Cumulative_Risk_Assessment_Status }}</td>
+        <td>{{ item.Date }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button
+            (click)="openTOXSectionsPopup(item); showToxSection3Popup = true"
+          >
+            Edit
+          </button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSectionsItem(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSections3Data.length === 0">
+        <td colspan="9" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="popup" *ngIf="showToxSection3Popup">
+    <form
+      (ngSubmit)="
+        submitToxSectionsForm(editTOXSectionsMode, '3');
+        showToxSection3Popup = false
+      "
+    >
+      <h2>{{ editTOXSectionsMode ? 'Edit' : 'Add' }} Record</h2>
+      <button
+        class="close-icon"
+        (click)="closeToxSectionsPopup(); showToxSection3Popup = false"
+      >
+        x
+      </button>
+
+      <label for="cumulativeRiskAssessmentRequiredFlag"
+        >Cumulative Risk Assessment Required Flag:</label
+      >
+      <select
+        name="cumulativeRiskAssessmentRequiredFlag"
+        [(ngModel)]="
+          newToxSections22232434Item.Cumulative_Risk_Assessment_Required_Flag
+        "
+        required
+      >
+        <option value="1">True</option>
+        <option value="0">False</option>
+      </select>
+
+      <label for="cumulativeRiskAssessmentStatus"
+        >Cumulative Risk Assessment Status:</label
+      >
+      <select
+        name="cumulativeRiskAssessmentStatus"
+        [(ngModel)]="
+          newToxSections22232434Item.Cumulative_Risk_Assessment_Status
+        "
+        required
+      >
+        <option value="Initiated">Initiated</option>
+        <option value="Completed">Completed</option>
+        <option value="Not required">Not required</option>
+      </select>
+
+      <label for="date">Date:</label>
+      <input
+        type="date"
+        name="date"
+        [(ngModel)]="newToxSections22232434Item.Date"
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSections22232434Item.PMRA_Number"
+        required
+      />
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newToxSections22232434Item.Comments"
+        maxlength="1024"
+      ></textarea>
+
+      <button type="submit">
+        {{ editTOXSectionsMode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+
+  <h3>4 - Reference Dose</h3>
+  <button
+    (click)="openTOXSectionsPopup(); showToxSection4Popup = true"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>PMRA Number</th>
+        <th>Comments</th>
+        <th>Reference Dose Submission Number</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSections4Data">
+        <td>{{ item.Date }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Comments }}</td>
+        <td>{{ item.Reference_Dose_Submission_Number }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button
+            (click)="openTOXSectionsPopup(item); showToxSection4Popup = true"
+          >
+            Edit
+          </button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSectionsItem(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSections4Data.length === 0">
+        <td colspan="8" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection4Popup">
+    <form
+      (ngSubmit)="
+        submitToxSectionsForm(editTOXSectionsMode, '4');
+        showToxSection4Popup = false
+      "
+    >
+      <h2>{{ editTOXSectionsMode ? 'Edit' : 'Add' }} Record</h2>
+      <button
+        class="close-icon"
+        (click)="closeToxSectionsPopup(); showToxSection4Popup = false"
+      >
+        x
+      </button>
+
+      <label for="date">Date:</label>
+      <input
+        type="date"
+        name="date"
+        [(ngModel)]="newToxSections22232434Item.Date"
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSections22232434Item.PMRA_Number"
+        required
+      />
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newToxSections22232434Item.Comments"
+        rows="5"
+        required
+      ></textarea>
+
+      <label for="referenceDoseSubmissionNumber"
+        >Reference Dose Submission Number:</label
+      >
+      <input
+        type="text"
+        name="referenceDoseSubmissionNumber"
+        [(ngModel)]="
+          newToxSections22232434Item.Reference_Dose_Submission_Number
+        "
+        required
+      />
+
+      <button type="submit">
+        {{ editTOXSectionsMode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+
+  <h3>5. Metabolites</h3>
+  <button
+    (click)="openToxSection5Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>PMRA Number of the Record of Residue Definition Decision</th>
+        <th>List of Metabolites</th>
+        <th>PMRA Number</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSection5Data">
+        <td>
+          {{ item.Category }}
+        </td>
+        <td>
+          {{ item.PMRA_Number_of_the_Record_of_Residue_Definition_Decision }}
+        </td>
+        <td>{{ item.List_of_Metabolites }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openToxSection5Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSection5Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSection5Data.length === 0">
+        <td colspan="6" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection5Popup">
+    <form (ngSubmit)="SubmitToxSection5Form(editToxSection5Mode)">
+      <h2>{{ editToxSection5Mode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeToxSection5Popup()">x</button>
+      <label for="category">Category:</label>
+      <select
+        name="category"
+        [(ngModel)]="newToxSection5Item.Category"
+        required
+      >
+        <option
+          value="Greater toxicity than the parent
+        compound
+        "
+        >
+          Greater toxicity than the parent compound
+        </option>
+        <option
+          value="Common to other TGAI and/or
+        common mechanism group(s)
+        "
+        >
+          Common to other TGAI and/or common mechanism group(s)
+        </option>
+        <option
+          value="Different spectrum of toxicity than
+          the parent compound
+        "
+        >
+          Different spectrum of toxicity than the parent compound
+        </option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="pmraNumberRecord"
+        >PMRA Number of the Record of Residue Definition Decision:</label
+      >
+      <input
+        type="number"
+        name="pmraNumberRecord"
+        [(ngModel)]="
+          newToxSection5Item.PMRA_Number_of_the_Record_of_Residue_Definition_Decision
+        "
+        required
+      />
+
+      <label for="listOfMetabolites">List of Metabolites:</label>
+      <input
+        type="text"
+        name="listOfMetabolites"
+        [(ngModel)]="newToxSection5Item.List_of_Metabolites"
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSection5Item.PMRA_Number"
+        required
+      />
+
+      <button type="submit">
+        {{ editToxSection5Mode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+  <h3>6. Impurities</h3>
+  <button
+    (click)="openToxSection6Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Impurity-Contaminant Name</th>
+        <th>Use-Site-Categories</th>
+        <th>Acceptable Level</th>
+        <th>PMRA Number</th>
+        <th>Name of Reference Document</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSection6Data">
+        <td>{{ item.Impurity_Contaminant_Name }}</td>
+        <td>
+          <span *ngIf="item.Subsection_Number === '6.1'">{{
+            item.Use_Site_Categories
+          }}</span>
+        </td>
+        <td>
+          <span *ngIf="item.Subsection_Number === '6.1'">{{
+            item.Acceptable_Level
+          }}</span>
+        </td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>
+          <span *ngIf="item.Subsection_Number === '6.2'">{{
+            item.Name_of_Reference_Document
+          }}</span>
+        </td>
+        <td>
+          <span *ngIf="item.Subsection_Number === '6.2'">{{
+            item.Comments
+          }}</span>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openToxSection6Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSection6Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSection6Data.length === 0">
+        <td colspan="10" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection6Popup">
+    <form (ngSubmit)="SubmitToxSection6Form(editToxSection6Mode)">
+      <h2>{{ editToxSection6Mode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeToxSection6Popup()">x</button>
+
+      <label for="subsectionNumber">Subsection Number:</label>
+      <select
+        name="subsectionNumber"
+        [(ngModel)]="newToxSection6Item.Subsection_Number"
+        required
+      >
+        <option value="6.1">6.1</option>
+        <option value="6.2">6.2</option>
+      </select>
+
+      <ng-container [ngSwitch]="newToxSection6Item.Subsection_Number">
+        <ng-container *ngSwitchCase="'6.1'">
+          <label for="impurityContaminantName"
+            >Impurity-Contaminant Name:</label
+          >
+          <input
+            type="text"
+            name="impurityContaminantName"
+            [(ngModel)]="newToxSection6Item.Impurity_Contaminant_Name"
+            required
+          />
+
+          <label for="useSiteCategories">Use-Site-Categories:</label>
+          <input
+            type="text"
+            name="useSiteCategories"
+            [(ngModel)]="newToxSection6Item.Use_Site_Categories"
+            required
+          />
+
+          <label for="acceptableLevel">Acceptable Level:</label>
+          <input
+            type="text"
+            name="acceptableLevel"
+            [(ngModel)]="newToxSection6Item.Acceptable_Level"
+            required
+          />
+
+          <label for="pmraNumber">PMRA Number:</label>
+          <input
+            type="number"
+            name="pmraNumber"
+            [(ngModel)]="newToxSection6Item.PMRA_Number"
+            required
+          />
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'6.2'">
+          <label for="impurityContaminantName"
+            >Impurity-Contaminant Name:</label
+          >
+          <input
+            type="text"
+            name="impurityContaminantName"
+            [(ngModel)]="newToxSection6Item.Impurity_Contaminant_Name"
+            required
+          />
+
+          <label for="refDocName">Name of Reference Document:</label>
+          <input
+            type="text"
+            name="refDocName"
+            [(ngModel)]="newToxSection6Item.Name_of_Reference_Document"
+            required
+          />
+
+          <label for="pmraNumber">PMRA Number:</label>
+          <input
+            type="number"
+            name="pmraNumber"
+            [(ngModel)]="newToxSection6Item.PMRA_Number"
+            required
+          />
+
+          <label for="comments">Comments:</label>
+          <textarea
+            name="comments"
+            [(ngModel)]="newToxSection6Item.Comments"
+            rows="4"
+            cols="50"
+            maxlength="1024"
+          ></textarea>
+        </ng-container>
+
+        <ng-container *ngSwitchDefault>
+          <!-- Render a message or error if no valid subsection is selected -->
+        </ng-container>
+      </ng-container>
+
+      <button type="submit">
+        {{ editToxSection6Mode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+  <h3>7. Label Comments</h3>
+  <button
+    (click)="openToxSection7Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Subsection Number</th>
+        <th>Document Type</th>
+        <th>Date</th>
+        <th>PMRA Number</th>
+        <th>Registration Number</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSection7Data">
+        <td>{{ item.Subsection_Number }}</td>
+        <td>
+          <span *ngIf="item.Subsection_Number === '7.1'">
+            {{ item.Document_Type }}</span
+          >
+        </td>
+        <td>{{ item.Date }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>
+          <span *ngIf="item.Subsection_Number === '7.2'">
+            {{ item.Registration_Number }}</span
+          >
+        </td>
+        <td>
+          <span *ngIf="item.Subsection_Number === '7.1'">
+            {{ item.Comments }}</span
+          >
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openToxSection7Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSection7Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSection7Data.length === 0">
+        <td colspan="10" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection7Popup">
+    <form (ngSubmit)="SubmitToxSection7Form(editToxSection7Mode)">
+      <h2>{{ editToxSection7Mode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeToxSection7Popup()">x</button>
+
+      <label for="subsectionNumber">Subsection Number:</label>
+      <select
+        name="pmraDocLoc"
+        [(ngModel)]="newToxSection7Item.Subsection_Number"
+        required
+      >
+        <option value="7.1">7.1</option>
+        <option value="7.2">7.2</option>
+      </select>
+
+      <!-- Display these columns if 7.1 is selected -->
+      <div *ngIf="newToxSection7Item.Subsection_Number === '7.1'">
+        <label for="documentType">Document Type:</label>
+        <input
+          type="text"
+          name="documentType"
+          [(ngModel)]="newToxSection7Item.Document_Type"
+          required
+        />
+
+        <label for="date">Date:</label>
+        <input
+          type="date"
+          name="date"
+          [(ngModel)]="newToxSection7Item.Date"
+          required
+        />
+
+        <label for="pmraNumber">PMRA Number:</label>
+        <input
+          type="number"
+          name="pmraNumber"
+          [(ngModel)]="newToxSection7Item.PMRA_Number"
+          required
+        />
+      </div>
+
+      <!-- Display these columns if 7.2 is selected -->
+      <div *ngIf="newToxSection7Item.Subsection_Number === '7.2'">
+        <label for="date">Date:</label>
+        <input
+          type="date"
+          name="date"
+          [(ngModel)]="newToxSection7Item.Date"
+          required
+        />
+
+        <label for="registrationNumber">Registration Number:</label>
+        <input
+          type="number"
+          name="registrationNumber"
+          [(ngModel)]="newToxSection7Item.Registration_Number"
+          required
+        />
+
+        <label for="pmraNumber">PMRA Number:</label>
+        <input
+          type="number"
+          name="pmraNumber"
+          [(ngModel)]="newToxSection7Item.PMRA_Number"
+          required
+        />
+
+        <label for="comments">Comments:</label>
+        <textarea
+          name="comments"
+          [(ngModel)]="newToxSection7Item.Comments"
+          rows="4"
+          cols="50"
+          maxlength="1024"
+        ></textarea>
+      </div>
+
+      <button type="submit">
+        {{ editToxSection7Mode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+
+  <h3>8. Special Notes</h3>
+  <button
+    (click)="openToxSection8Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Evaluator</th>
+        <th>Date</th>
+        <th>Comments</th>
+        <th>Reference PMRA Document Number</th>
+        <th>PMRA Number</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSection8Data">
+        <td>{{ item.Evaluator }}</td>
+        <td>{{ item.Date }}</td>
+        <td>{{ item.Comments }}</td>
+        <td>{{ item.Reference_PMRA_Document_Number }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openToxSection8Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSection8Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSection8Data.length === 0">
+        <td colspan="10" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection8Popup">
+    <form (ngSubmit)="SubmitToxSection8Form(editToxSection8Mode)">
+      <h2>{{ editToxSection8Mode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeToxSection8Popup()">x</button>
+
+      <label for="evaluator">Evaluator:</label>
+      <input
+        type="text"
+        name="evaluator"
+        [(ngModel)]="newToxSection8Item.Evaluator"
+        required
+      />
+
+      <label for="date">Date:</label>
+      <input
+        type="date"
+        name="date"
+        [(ngModel)]="newToxSection8Item.Date"
+        required
+      />
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newToxSection8Item.Comments"
+        rows="4"
+        cols="50"
+        maxlength="1024"
+      ></textarea>
+
+      <label for="referencePMRADocumentNumber"
+        >Reference PMRA Document Number:</label
+      >
+      <input
+        type="number"
+        name="referencePMRADocumentNumber"
+        [(ngModel)]="newToxSection8Item.Reference_PMRA_Document_Number"
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSection8Item.PMRA_Number"
+        required
+      />
+
+      <button type="submit">
+        {{ editToxSection8Mode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+  <h3>9. New Data/ Scientific Issues</h3>
+  <button
+    (click)="openToxSection9Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Subsection Name</th>
+        <th>Study Type</th>
+        <th>Document Type</th>
+        <th>PMRA Number</th>
+        <th>Document Reference</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSection9Data">
+        <td>{{ item.Subsection_Name }}</td>
+        <td>{{ item.Study_Type }}</td>
+        <td>{{ item.Document_Type }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Document_Reference }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openToxSection9Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSection9Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSection9Data.length === 0">
+        <td colspan="10" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection9Popup">
+    <form (ngSubmit)="SubmitToxSection9Form(editToxSection9Mode)">
+      <h2>{{ editToxSection9Mode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeToxSection9Popup()">x</button>
+
+      <label for="subsectionName">Subsection Name:</label>
+      <select
+        name="pmraDocLoc"
+        [(ngModel)]="newToxSection9Item.Subsection_Name"
+        required
+      >
+        <option value="TGAI">TGAI</option>
+        <option value="Metabolites">Metabolites</option>
+        <option value="Impurities">Impurities</option>
+      </select>
+      <label for="studyType">Study Type:</label>
+      <input
+        type="text"
+        name="studyType"
+        [(ngModel)]="newToxSection9Item.Study_Type"
+        required
+      />
+
+      <label for="documentType">Document Type:</label>
+      <input
+        type="text"
+        name="documentType"
+        [(ngModel)]="newToxSection9Item.Document_Type"
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSection9Item.PMRA_Number"
+        required
+      />
+      <label for="documentReference">Document Reference:</label>
+      <input
+        type="text"
+        name="documentReference"
+        [(ngModel)]="newToxSection9Item.Document_Reference"
+        required
+      />
+      <label for="comments">Comments:</label>
+
+      <textarea
+        name="comments"
+        [(ngModel)]="newToxSection9Item.Comments"
+        rows="4"
+        cols="50"
+        maxlength="1024"
+      ></textarea>
+
+      <button type="submit">
+        {{ editToxSection9Mode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+  <h3>10. Assessments conducted by other international organizations</h3>
+  <button
+    (click)="openToxSection10Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>International Organization</th>
+        <th>Document Title</th>
+        <th>PMRA Number</th>
+        <th>Date of Publication</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSection10Data">
+        <td>{{ item.International_Organization }}</td>
+        <td>{{ item.Document_Title }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Date_of_Publication }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openToxSection10Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSection10Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSection10Data.length === 0">
+        <td colspan="10" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection10Popup">
+    <form (ngSubmit)="SubmitToxSection10Form(editToxSection10Mode)">
+      <h2>{{ editToxSection10Mode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeToxSection10Popup()">x</button>
+
+      <label for="internationalOrg">International Organization:</label>
+      <input
+        type="text"
+        name="internationalOrg"
+        [(ngModel)]="newToxSection10Item.International_Organization"
+        required
+      />
+
+      <label for="documentTitle">Document Title:</label>
+      <input
+        type="text"
+        name="documentTitle"
+        [(ngModel)]="newToxSection10Item.Document_Title"
+        required
+      />
+
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSection10Item.PMRA_Number"
+        required
+      />
+
+      <label for="date">Date of Publication:</label>
+      <input
+        type="date"
+        name="date"
+        [(ngModel)]="newToxSection10Item.Date_of_Publication"
+        required
+      />
+
+      <button type="submit">
+        {{ editToxSection10Mode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+
+  <h3>11. Public literature</h3>
+  <button
+    (click)="openToxSection11Popup()"
+    class="hide-print"
+    *ngIf="valueData['flag'] === 0"
+  >
+    Add New Record
+  </button>
+  <br />
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Search Conducted By</th>
+        <th>Evaluator</th>
+        <th>Search Conducted Date</th>
+        <th>Search String</th>
+        <th>PMRA Number</th>
+        <th>Comments</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Edit</th>
+        <th class="hide-print" *ngIf="valueData['flag'] === 0">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of toxSection11Data">
+        <td>{{ item.Search_Conducted_By }}</td>
+        <td>{{ item.Evaluator }}</td>
+        <td>{{ item.Search_Conducted_Date }}</td>
+        <td>{{ item.Search_String }}</td>
+        <td>{{ item.PMRA_Number }}</td>
+        <td>{{ item.Comments }}</td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="openToxSection11Popup(item)">Edit</button>
+        </td>
+        <td class="hide-print" *ngIf="valueData['flag'] === 0">
+          <button (click)="deleteToxSection11Item(item)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="toxSection11Data.length === 0">
+        <td colspan="10" style="text-align: center">No Record Found</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- The popup form -->
+  <div id="popup" *ngIf="showToxSection11Popup">
+    <form (ngSubmit)="SubmitToxSection11Form(editToxSection11Mode)">
+      <h2>{{ editToxSection11Mode ? 'Edit' : 'Add' }} Record</h2>
+      <button class="close-icon" (click)="closeToxSection11Popup()">x</button>
+
+      <label for="searchConductedBy">Search Conducted By:</label>
+      <select
+        name="searchConductedBy"
+        [(ngModel)]="newToxSection11Item.Search_Conducted_By"
+        required
+      >
+        <option value="Internal">Internal</option>
+        <option value="External">External</option>
+      </select>
+
+      <label for="evaluator">Evaluator:</label>
+      <input
+        type="text"
+        name="evaluator"
+        [(ngModel)]="newToxSection11Item.Evaluator"
+        required
+      />
+
+      <label for="searchConductedDate">Search Conducted Date:</label>
+      <input
+        type="date"
+        name="searchConductedDate"
+        [(ngModel)]="newToxSection11Item.Search_Conducted_Date"
+        required
+      />
+
+      <label for="searchString">Search String:</label>
+      <input
+        type="text"
+        name="searchString"
+        [(ngModel)]="newToxSection11Item.Search_String"
+        required
+      />
+      <label for="pmraNumber">PMRA Number:</label>
+      <input
+        type="number"
+        name="pmraNumber"
+        [(ngModel)]="newToxSection11Item.PMRA_Number"
+        required
+      />
+
+      <label for="comments">Comments:</label>
+      <textarea
+        name="comments"
+        [(ngModel)]="newToxSection11Item.Comments"
+        rows="4"
+        cols="50"
+        maxlength="1024"
+      ></textarea>
+
+      <button type="submit">
+        {{ editToxSection11Mode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+</span>
+<h3>Section Head Feedback</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Comments</th>
+      <th>Feedback</th>
+      <th *ngIf="newApprovalItem.DateofFeedback">Date of Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <textarea
+          rows="4"
+          cols="50"
+          maxlength="1024"
+          [(ngModel)]="newApprovalItem.Comments"
+          [disabled]="shmode !== '1'"
+        ></textarea>
+      </td>
+      <td *ngIf="shmode === '1'">
+        <select
+          [(ngModel)]="newApprovalItem.Feedback"
+          [disabled]="shmode !== '1'"
+        >
+          <option value="Approved">Approved</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </td>
+      <td *ngIf="shmode === '0' || !shmode">
+        {{ newApprovalItem.Feedback }}
+      </td>
+      <td *ngIf="newApprovalItem.DateofFeedback">
+        {{ newApprovalItem.DateofFeedback }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button
+  (click)="requestForApproval()"
+  [ngStyle]="{
+    'background-color':
+      newApprovalItem.Feedback === 'Approved' && shmode !== '1' ? 'green' : ''
+  }"
+  [disabled]="newApprovalItem.Feedback === 'Approved' && shmode !== '1'"
+>
+  {{
+    shmode === '1'
+      ? 'Submit Feedback'
+      : newApprovalItem.Feedback === 'Approved' && shmode !== '1'
+      ? 'Approved'
+      : 'Request Approval'
+  }}
+</button>

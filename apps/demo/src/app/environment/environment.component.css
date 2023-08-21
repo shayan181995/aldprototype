@@ -1,0 +1,281 @@
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+th {
+  text-align: left;
+  background-color: #f1f1f1;
+}
+
+/* Input Styles */
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Button Styles */
+button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4285f4;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+/* Cheveron Icon Styles */
+.chevron {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.fas.fa-chevron-up {
+  transform: rotate(180deg);
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+  z-index: 999; /* make sure it's on top of other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+/* Google Forms Style */
+#popup form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#popup h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 20px;
+  color: #202124;
+}
+
+#popup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #5f6368;
+  font-weight: 500;
+}
+
+#popup input[type="date"],
+#popup input[type="text"]{
+  margin-bottom: 10px; 
+}
+#popup textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  background-color: #f1f3f4;
+  font-size: 16px;
+  color: #202124;
+  font-weight: 400;
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px; 
+}
+
+#popup input[type="date"]:focus,
+#popup input[type="text"]:focus,
+#popup textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 4px #4285f4;
+}
+
+#popup input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px; 
+}
+
+/* remove the default spinner buttons */
+#popup input[type="number"]::-webkit-outer-spin-button,
+#popup input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* use a text alignment and cursor consistent with text inputs */
+#popup input[type="number"] {
+  text-align: left;
+  cursor: text;
+  margin-bottom: 10px; 
+}
+
+#popup input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(10%) sepia(94%) saturate(2469%) hue-rotate(191deg) brightness(104%) contrast(105%);
+}
+
+#popup input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(10%) sepia(94%) saturate(2469%) hue-rotate(191deg) brightness(104%) contrast(105%);
+}
+
+#popup button[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#popup button[type="submit"]:hover {
+  background-color: #3367d6;
+}
+
+/* Close Button */
+#popup .close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #5f6368;
+}
+
+#popup .close-icon:hover {
+  color: #202124;
+}
+
+
+#popup select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  appearance: none; /* remove default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23333333" d="M7 10l5 5 5-5z"/></svg>'); /* add custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  cursor: pointer;
+  margin-bottom: 10px; 
+}
+
+#popup select:hover,
+#popup select:focus {
+  border-color: #3367d6;
+  box-shadow: 0 0 0 2px rgba(51,103,214,0.3);
+  outline: none;
+}
+#popup label {
+  display: block;
+  margin-bottom: 10px; /* add margin bottom to create line break */
+}
+#popup input[type="date"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+}
+@media print {
+  .hide-print {
+    display: none;
+  }
+}
+th {
+  width: 400px;
+}
+.active-code-td {
+  position: relative;
+}
+.active-code-td input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f3f4;
+  font-size: 16px;
+  color: #202124;
+  font-weight: 400;
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px; 
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  appearance: none; /* remove default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23333333" d="M7 10l5 5 5-5z"/></svg>'); /* add custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  cursor: pointer;
+  margin-bottom: 10px; 
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,271 @@
+
+
+<table border="1">
+  <tr>
+    <th colspan="2">Dashboard</th>
+  </tr>
+  <tr>
+    <td>Active Name</td>
+    <td>{{activeName}}</td>
+  </tr>
+  <tr>
+    <td>Active Code</td>
+    <td class="active-code-td"><input type="text" [(ngModel)]="activeCode"></td>
+  </tr>
+  <tr>
+    <td>Anchor Submission Number</td>
+    <td>{{anchorSubmissionNumber}}</td>
+  </tr>
+  <tr>
+    <td>Registered Product Numbers</td>
+    <td>{{registeredProductNumbers}}</td>
+  </tr>
+  <tr>
+    <td>Cluster</td>
+    <td>{{cluster}}</td>
+  </tr>
+  <tr>
+    <td>Submissions</td>
+    <td>{{submissions}}</td>
+  </tr>
+</table>
+<br>
+<button (click)="pullData()">Pull Data</button>
+<br>
+<br>
+<div class="accordion" *ngFor="let item of accordionItems">
+  <div class="accordion-item">
+    <div class="accordion-header" (click)="toggleAccordion(item)">
+      <span>{{ item.name }}</span>
+      <i *ngIf="!item.active"><b>+</b></i>
+      <i *ngIf="item.active"><b>-</b></i>
+    </div>
+    <div class="accordion-body" [class.active]="item.active">
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Anchor Submission Number</th>
+              <th>ALD Report to Generate</th>
+              <th>Evaluator</th>
+              <th>ALD Required</th>
+              <th>Program Activity</th>
+              <th>Active Code</th>
+              <th>Active Name</th>
+              <th>Cluster Name</th>
+              <th>Related Submission Numbers</th>
+              <th>Submission Number</th>
+              <th>Initiation Date</th>
+              <th>ALD Number</th>
+              <th>Submission Category</th>
+              <th>Submission Type</th>
+              <th>Level</th>
+              <th>ALD created on</th>
+              <th>ALD Last Updated on</th>
+              <th>ALD Approved on</th>
+              <th>ALD Approved By</th>
+              <th>Evaluator sub-Group</th>
+              <th>USCs</th>
+              <th>Purpose of Submission</th>
+              <th>Additional Purpose of Submission Comments</th>
+              <th>Scoping Document Number</th>
+              <th>SMC BN1</th>
+              <th>SMC BN1 Date</th>
+              <th>SMC BN2</th>
+              <th>SMC BN2 Date</th>
+              <th>Proposed Decision Document Number</th>
+              <th>Final Decision Document Number</th>
+              <th>Outcome</th>
+              <th>Aditional Outcome Reasons</th>
+              <th>Next Assessment Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngIf="item.name === 'Value'">
+              <tr *ngFor="let values of Value">
+                <td>{{ values['Anchor Submission Number'] }}</td>
+                <td>{{ values['ALD Report to Generate'] }}</td>
+                <td>{{ values['Evaluator'] }}</td>
+                <td>{{ values['ALD Required'] }}</td>
+                <td>{{ values['Program Activity'] }}</td>
+                <td>{{ values['Active Code'] }}</td>
+                <td>{{ values['Active Name'] }}</td>
+                <td>{{ values['Cluster Name'] }}</td>
+                <td>{{ values['Related Submission Numbers'] }}</td>
+                <td>{{ values['Submission Number'] }}</td>
+                <td>{{ values['Initiation Date'] }}</td>
+                <td>{{ values['ALD Number'] }}</td>
+                <td>{{ values['Submission Category'] }}</td>
+                <td>{{ values['Submission Type'] }}</td>
+                <td>{{ values['Level'] }}</td>
+                <td>{{ values['ALD created on'] }}</td>
+                <td>{{ values['ALD Last Updated on'] }}</td>
+                <td>{{ values['ALD Approved on'] }}</td>
+                <td>{{ values['ALD Approved By'] }}</td>
+                <td>{{ values['Evaluator sub-Group'] }}</td>
+                <td>{{ values['USCs'] }}</td>
+                <td>{{ values['Purpose of Submission'] }}</td>
+                <td>
+                  {{ values['Additional Purpose of Submission Comments'] }}
+                </td>
+                <td>{{ values['Scoping Document Number'] }}</td>
+                <td>{{ values['SMC BN1'] }}</td>
+                <td>{{ values['SMC BN1 Date'] }}</td>
+                <td>{{ values['SMC BN2'] }}</td>
+                <td>{{ values['SMC BN2 Date'] }}</td>
+                <td>{{ values['Proposed Decision Document Number'] }}</td>
+                <td>{{ values['Final Decision Document Number'] }}</td>
+                <td>{{ values['Outcome'] }}</td>
+                <td>{{ values['Aditional Outcome Reasons'] }}</td>
+                <td>{{ values['Next Assessment Date'] }}</td>
+                <td><button><a [routerLink]="'../value/'+ values['Submission Number'] " target="_blank">View ALD Report</a></button></td>
+               
+              </tr>
+              <tr *ngIf="Value.length===0">
+                <td colspan="20" style="text-align: center">No Record Found</td>
+              </tr>
+            </ng-container>
+            <ng-container *ngIf="item.name === 'General Info'">
+              <tr *ngFor="let values of General">
+                <td>{{ values['Anchor Submission Number'] }}</td>
+                <td>{{ values['ALD Report to Generate'] }}</td>
+                <td>{{ values['Evaluator'] }}</td>
+                <td>{{ values['ALD Required'] }}</td>
+                <td>{{ values['Program Activity'] }}</td>
+                <td>{{ values['Active Code'] }}</td>
+                <td>{{ values['Active Name'] }}</td>
+                <td>{{ values['Cluster Name'] }}</td>
+                <td>{{ values['Related Submission Numbers'] }}</td>
+                <td>{{ values['Submission Number'] }}</td>
+                <td>{{ values['Initiation Date'] }}</td>
+                <td>{{ values['ALD Number'] }}</td>
+                <td>{{ values['Submission Category'] }}</td>
+                <td>{{ values['Submission Type'] }}</td>
+                <td>{{ values['Level'] }}</td>
+                <td>{{ values['ALD created on'] }}</td>
+                <td>{{ values['ALD Last Updated on'] }}</td>
+                <td>{{ values['ALD Approved on'] }}</td>
+                <td>{{ values['ALD Approved By'] }}</td>
+                <td>{{ values['Evaluator sub-Group'] }}</td>
+                <td>{{ values['USCs'] }}</td>
+                <td>{{ values['Purpose of Submission'] }}</td>
+                <td>
+                  {{ values['Additional Purpose of Submission Comments'] }}
+                </td>
+                <td>{{ values['Scoping Document Number'] }}</td>
+                <td>{{ values['SMC BN1'] }}</td>
+                <td>{{ values['SMC BN1 Date'] }}</td>
+                <td>{{ values['SMC BN2'] }}</td>
+                <td>{{ values['SMC BN2 Date'] }}</td>
+                <td>{{ values['Proposed Decision Document Number'] }}</td>
+                <td>{{ values['Final Decision Document Number'] }}</td>
+                <td>{{ values['Outcome'] }}</td>
+                <td>{{ values['Aditional Outcome Reasons'] }}</td>
+                <td>{{ values['Next Assessment Date'] }}</td>
+                <td><button><a [routerLink]="'../general/'+ values['Submission Number'] " target="_blank">View ALD Report</a></button></td>
+              </tr>
+              <tr *ngIf="General.length===0">
+                <td colspan="20" style="text-align: center">No Record Found</td>
+              </tr>
+            </ng-container>
+            <ng-container *ngIf="item.name === 'TOX'">
+              <tr *ngFor="let values of TOX">
+                <td>{{ values['Anchor Submission Number'] }}</td>
+                <td>{{ values['ALD Report to Generate'] }}</td>
+                <td>{{ values['Evaluator'] }}</td>
+                <td>{{ values['ALD Required'] }}</td>
+                <td>{{ values['Program Activity'] }}</td>
+                <td>{{ values['Active Code'] }}</td>
+                <td>{{ values['Active Name'] }}</td>
+                <td>{{ values['Cluster Name'] }}</td>
+                <td>{{ values['Related Submission Numbers'] }}</td>
+                <td>{{ values['Submission Number'] }}</td>
+                <td>{{ values['Initiation Date'] }}</td>
+                <td>{{ values['ALD Number'] }}</td>
+                <td>{{ values['Submission Category'] }}</td>
+                <td>{{ values['Submission Type'] }}</td>
+                <td>{{ values['Level'] }}</td>
+                <td>{{ values['ALD created on'] }}</td>
+                <td>{{ values['ALD Last Updated on'] }}</td>
+                <td>{{ values['ALD Approved on'] }}</td>
+                <td>{{ values['ALD Approved By'] }}</td>
+                <td>{{ values['Evaluator sub-Group'] }}</td>
+                <td>{{ values['USCs'] }}</td>
+                <td>{{ values['Purpose of Submission'] }}</td>
+                <td>
+                  {{ values['Additional Purpose of Submission Comments'] }}
+                </td>
+                <td>{{ values['Scoping Document Number'] }}</td>
+                <td>{{ values['SMC BN1'] }}</td>
+                <td>{{ values['SMC BN1 Date'] }}</td>
+                <td>{{ values['SMC BN2'] }}</td>
+                <td>{{ values['SMC BN2 Date'] }}</td>
+                <td>{{ values['Proposed Decision Document Number'] }}</td>
+                <td>{{ values['Final Decision Document Number'] }}</td>
+                <td>{{ values['Outcome'] }}</td>
+                <td>{{ values['Aditional Outcome Reasons'] }}</td>
+                <td>{{ values['Next Assessment Date'] }}</td>
+                <td><button><a [routerLink]="'../tox/'+ values['Submission Number'] " target="_blank">View ALD Report</a></button></td>
+              </tr>
+              <tr *ngIf="TOX.length===0">
+                <td colspan="20" style="text-align: center">No Record Found</td>
+              </tr>
+            </ng-container>
+            <ng-container
+              *ngIf="item.name === 'Environment'"
+            >
+              <tr *ngFor="let values of Environment">
+                <td>{{ values['Anchor Submission Number'] }}</td>
+                <td>{{ values['ALD Report to Generate'] }}</td>
+                <td>{{ values['Evaluator'] }}</td>
+                <td>{{ values['ALD Required'] }}</td>
+                <td>{{ values['Program Activity'] }}</td>
+                <td>{{ values['Active Code'] }}</td>
+                <td>{{ values['Active Name'] }}</td>
+                <td>{{ values['Cluster Name'] }}</td>
+                <td>{{ values['Related Submission Numbers'] }}</td>
+                <td>{{ values['Submission Number'] }}</td>
+                <td>{{ values['Initiation Date'] }}</td>
+                <td>{{ values['ALD Number'] }}</td>
+                <td>{{ values['Submission Category'] }}</td>
+                <td>{{ values['Submission Type'] }}</td>
+                <td>{{ values['Level'] }}</td>
+                <td>{{ values['ALD created on'] }}</td>
+                <td>{{ values['ALD Last Updated on'] }}</td>
+                <td>{{ values['ALD Approved on'] }}</td>
+                <td>{{ values['ALD Approved By'] }}</td>
+                <td>{{ values['Evaluator sub-Group'] }}</td>
+                <td>{{ values['USCs'] }}</td>
+                <td>{{ values['Purpose of Submission'] }}</td>
+                <td>
+                  {{ values['Additional Purpose of Submission Comments'] }}
+                </td>
+                <td>{{ values['Scoping Document Number'] }}</td>
+                <td>{{ values['SMC BN1'] }}</td>
+                <td>{{ values['SMC BN1 Date'] }}</td>
+                <td>{{ values['SMC BN2'] }}</td>
+                <td>{{ values['SMC BN2 Date'] }}</td>
+                <td>{{ values['Proposed Decision Document Number'] }}</td>
+                <td>{{ values['Final Decision Document Number'] }}</td>
+                <td>{{ values['Outcome'] }}</td>
+                <td>{{ values['Aditional Outcome Reasons'] }}</td>
+                <td>{{ values['Next Assessment Date'] }}</td>
+                <td><button><a [routerLink]="'../environment/'+ values['Submission Number'] " target="_blank">View ALD Report</a></button></td>
+              </tr>
+              <tr *ngIf="Environment.length===0">
+                <td colspan="20" style="text-align: center">No Record Found</td>
+              </tr>
+            </ng-container>
+            
+            <ng-container *ngIf="item.name !== 'TOX' && item.name !== 'General Info' && item.name !== 'Value' && item.name !== 'Environment'">
+              <tr>
+                <td colspan="20" style="text-align: center">No Record Found</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
